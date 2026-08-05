@@ -80,7 +80,10 @@ export default function Header() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle overlay={overHero} />
-          <WaButton className="min-h-11 px-4 py-2 text-sm sm:px-5">
+          <WaButton
+            className="min-h-11 px-4 py-2 text-sm sm:px-5"
+            ariaLabel="Pesan via WhatsApp"
+          >
             <span className="hidden sm:inline">Pesan Sekarang</span>
           </WaButton>
         </div>

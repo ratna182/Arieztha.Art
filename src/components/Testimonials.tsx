@@ -30,7 +30,7 @@ export default function Testimonials() {
             <div className="font-display text-2xl font-bold text-sky-600 dark:text-sky-300">
               <CountUp to={BUSINESS.rating} decimals={1} />
             </div>
-            <div className="flex items-center justify-end gap-0.5" aria-label="Rating 5 dari 5">
+            <div className="flex items-center justify-end gap-0.5" role="img" aria-label="Rating 5 dari 5">
               {[1, 2, 3, 4, 5].map((n) => (
                 <Star key={n} />
               ))}

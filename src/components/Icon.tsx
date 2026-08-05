@@ -57,5 +57,5 @@ export default function Icon({
 }
 
 export function WhatsAppIcon({ className }: { className?: string }) {
-  return <WhatsappLogo className={className} weight="fill" />;
+  return <WhatsappLogo className={className} weight="fill" aria-hidden="true" />;
 }

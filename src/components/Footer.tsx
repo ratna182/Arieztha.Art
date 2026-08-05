@@ -80,7 +80,10 @@ export default function Footer() {
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-sky-300">
           <p>
             © {new Date().getFullYear()} {BUSINESS.fullName} ·{" "}
-            <a href="#top" className="text-sky-100 transition-colors hover:text-white">
+            <a
+              href="#top"
+              className="text-sky-100 underline underline-offset-2 decoration-sky-300 transition-colors hover:text-white"
+            >
               Kembali ke atas
             </a>
           </p>
