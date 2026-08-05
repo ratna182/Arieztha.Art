@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
-import { BUSINESS, waLink, WA_DEFAULT_MESSAGE } from "@/lib/data";
-import { WhatsAppIcon } from "@/components/Icon";
+import { BUSINESS } from "@/lib/data";
+import WaButton from "@/components/WaButton";
 
 const MAP_EMBED_SRC =
   "https://www.google.com/maps?q=" +
@@ -33,24 +32,14 @@ export default function Location() {
               </div>
             </div>
 
-            <a
-              href={waLink(WA_DEFAULT_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center gap-2.5 rounded-full bg-wa px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-wa/30 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
-            >
-              <WhatsAppIcon className="h-6 w-6" />
-              Pesan via WhatsApp
-            </a>
+            <div className="mt-10">
+              <WaButton className="px-6 py-3.5 text-base">
+                Pesan via WhatsApp
+              </WaButton>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5 }}
-            className="overflow-hidden rounded-2xl border border-sky-100 shadow-lg"
-          >
+          <div className="overflow-hidden rounded-2xl border border-sky-100 shadow-lg">
             <iframe
               src={MAP_EMBED_SRC}
               title="Peta lokasi Arieztha.Art Percetakan Yasin"
@@ -59,7 +48,7 @@ export default function Location() {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

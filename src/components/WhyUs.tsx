@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
-import { BUSINESS, TESTIMONIALS, waLink, WA_DEFAULT_MESSAGE } from "@/lib/data";
-import Icon, { WhatsAppIcon } from "@/components/Icon";
+import { BUSINESS } from "@/lib/data";
+import Icon from "@/components/Icon";
+import WaButton from "@/components/WaButton";
 
 const REASONS = [
   {
@@ -49,25 +49,17 @@ export default function WhyUs() {
               <span aria-hidden="true">·</span>
               <span>{BUSINESS.hours}</span>
             </p>
-            <a
-              href={waLink(WA_DEFAULT_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2.5 rounded-full bg-wa px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-wa/30 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
-            >
-              <WhatsAppIcon className="h-6 w-6" />
-              Chat sekarang
-            </a>
+            <div className="mt-6">
+              <WaButton className="px-6 py-3.5 text-base">
+                Chat sekarang
+              </WaButton>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-grid sm:gap-grid-lg">
-            {REASONS.map((r, i) => (
-              <motion.div
+            {REASONS.map((r) => (
+              <div
                 key={r.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
                 className="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-card"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
@@ -77,7 +69,7 @@ export default function WhyUs() {
                   {r.title}
                 </h3>
                 <p className="mt-2 text-sm text-neutral-600">{r.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

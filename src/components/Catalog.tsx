@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { CATALOG, waLink } from "@/lib/data";
+import { EASE } from "@/lib/motion";
 import Icon from "@/components/Icon";
 import { WhatsAppIcon } from "@/components/Icon";
 
 export default function Catalog() {
   const [open, setOpen] = useState<string | null>("buku-yasin");
+  const reduceMotion = useReducedMotion();
 
   return (
     <section className="bg-sky-50 py-section sm:py-section-lg">
@@ -20,15 +22,11 @@ export default function Catalog() {
         </p>
 
         <div className="mt-stack grid gap-3">
-          {CATALOG.map((cat, i) => {
+          {CATALOG.map((cat) => {
             const isOpen = open === cat.id;
             return (
-              <motion.div
+              <div
                 key={cat.id}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.3) }}
                 className="overflow-hidden rounded-2xl border border-sky-100 bg-white"
               >
                 <button
@@ -59,7 +57,11 @@ export default function Catalog() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      transition={
+                        reduceMotion
+                          ? { duration: 0 }
+                          : { duration: 0.35, ease: EASE }
+                      }
                       className="overflow-hidden"
                     >
                       <div className="flex flex-wrap gap-chip border-t border-sky-50 px-5 py-5 sm:px-6">
@@ -84,9 +86,9 @@ export default function Catalog() {
                         </a>
                       </div>
                     </motion.div>
-                  )}
+                  )} 
                 </AnimatePresence>
-              </motion.div>
+              </div>
             );
           })}
         </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { BUSINESS, waLink, WA_DEFAULT_MESSAGE } from "@/lib/data";
-import { WhatsAppIcon } from "@/components/Icon";
+import { BUSINESS } from "@/lib/data";
+import WaButton from "@/components/WaButton";
 
 export default function Header() {
   return (
@@ -19,16 +19,9 @@ export default function Header() {
           </span>
         </a>
 
-        <a
-          href={waLink(WA_DEFAULT_MESSAGE)}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Pesan sekarang via WhatsApp"
-          className="inline-flex min-h-11 items-center gap-2 rounded-full bg-wa px-4 py-2 text-sm font-semibold text-white transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:px-5"
-        >
-          <WhatsAppIcon className="h-5 w-5" />
-          <span className="hidden xs:inline sm:inline">Pesan Sekarang</span>
-        </a>
+        <WaButton className="min-h-11 px-4 py-2 text-sm sm:px-5">
+          <span className="hidden sm:inline">Pesan Sekarang</span>
+        </WaButton>
       </div>
     </header>
   );

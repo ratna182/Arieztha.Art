@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "motion/react";
 import { BUSINESS, TESTIMONIALS } from "@/lib/data";
 
 export default function Testimonials() {
@@ -32,13 +29,9 @@ export default function Testimonials() {
         </div>
 
         <div className="mt-stack grid gap-grid sm:gap-grid-lg md:grid-cols-3">
-          {TESTIMONIALS.map((t, i) => (
-            <motion.figure
+          {TESTIMONIALS.map((t) => (
+            <figure
               key={t.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col rounded-2xl border border-sky-100 bg-white p-card shadow-sm sm:p-card-lg"
             >
               <div className="flex items-center gap-0.5" aria-hidden="true">
@@ -53,7 +46,7 @@ export default function Testimonials() {
                 <div className="font-semibold text-sky-800">{t.name}</div>
                 <div className="text-sm text-neutral-500">{t.role}</div>
               </figcaption>
-            </motion.figure>
+            </figure>
           ))}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { BUSINESS, waLink, WA_DEFAULT_MESSAGE } from "@/lib/data";
-import { WhatsAppIcon } from "@/components/Icon";
+import { BUSINESS } from "@/lib/data";
+import WaButton from "@/components/WaButton";
 
 export default function Footer() {
   return (
@@ -25,16 +25,9 @@ export default function Footer() {
             </div>
           </div>
 
-          <a
-            href={waLink(WA_DEFAULT_MESSAGE)}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Hubungi via WhatsApp"
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-wa px-5 py-2.5 text-sm font-semibold text-white transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
+          <WaButton className="min-h-11 px-5 py-2.5 text-sm">
             Hubungi Kami
-          </a>
+          </WaButton>
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-sky-300">

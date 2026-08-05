@@ -1,10 +1,13 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { HIGHLIGHTS, waLink } from "@/lib/data";
+import { revealContainer, revealItem } from "@/lib/motion";
 import Icon from "@/components/Icon";
 
 export default function Highlights() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section className="bg-white py-section sm:py-section-lg">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -15,17 +18,20 @@ export default function Highlights() {
           Kebutuhan cetak yang paling sering dipesan pelanggan kami.
         </p>
 
-        <div className="mt-stack grid grid-cols-2 gap-grid sm:gap-grid-lg lg:grid-cols-4">
-          {HIGHLIGHTS.map((item, i) => (
+        <motion.div
+          variants={revealContainer}
+          initial={reduceMotion ? false : "hidden"}
+          whileInView={reduceMotion ? undefined : "show"}
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-stack grid grid-cols-2 gap-grid sm:gap-grid-lg lg:grid-cols-4"
+        >
+          {HIGHLIGHTS.map((item) => (
             <motion.a
               key={item.id}
+              variants={revealItem}
               href={waLink(item.message)}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
               className="group flex flex-col rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-card transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100 sm:p-card-lg"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 transition-colors duration-300 group-hover:bg-sky-500 group-hover:text-white">
@@ -43,7 +49,7 @@ export default function Highlights() {
               </span>
             </motion.a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
