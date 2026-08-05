@@ -24,7 +24,7 @@ export default function WaButton({
       whileTap={reduceMotion ? undefined : { scale: 0.97 }}
       transition={{ duration: 0.18, ease: "easeOut" }}
       className={
-        "inline-flex items-center gap-2.5 rounded-full bg-wa font-semibold text-white shadow-lg shadow-wa/30 " +
+        "inline-flex items-center gap-2.5 rounded-full bg-wa font-semibold text-white shadow-lg shadow-wa/20 " +
         className
       }
     >

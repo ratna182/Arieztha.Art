@@ -60,7 +60,7 @@ export default function WhyUs() {
             {REASONS.map((r) => (
               <div
                 key={r.title}
-                className="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-card"
+                className="rounded-2xl border border-sky-100 bg-sky-50/50 p-card"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
                   <Icon name={r.icon} className="h-6 w-6" weight="duotone" />

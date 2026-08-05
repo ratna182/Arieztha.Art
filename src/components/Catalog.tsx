@@ -79,7 +79,7 @@ export default function Catalog() {
                           href={waLink(cat.message)}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full border border-wa/40 bg-wa/5 px-4 py-2 text-sm font-medium text-[#128C4A] transition-colors hover:bg-wa hover:text-white"
+                          className="inline-flex items-center gap-2 rounded-full border border-wa/40 bg-wa/5 px-4 py-2 text-sm font-medium text-wa-700 transition-colors hover:bg-wa hover:text-white"
                         >
                           <WhatsAppIcon className="h-4 w-4" />
                           Tanya soal {cat.title}

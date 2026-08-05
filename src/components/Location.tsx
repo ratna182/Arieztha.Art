@@ -39,7 +39,7 @@ export default function Location() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-sky-100 shadow-lg">
+          <div className="overflow-hidden rounded-2xl border border-sky-100 shadow-md">
             <iframe
               src={MAP_EMBED_SRC}
               title="Peta lokasi Arieztha.Art Percetakan Yasin"
