@@ -21,7 +21,7 @@ export default function Location() {
             variants={reduceMotion ? undefined : revealItemX}
           >
             <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
-              Percetakan Bekasi di Pondok Melati
+              Percetakan Express di Bekasi
             </h2>
             <p className="mt-stack-sm max-w-xl text-neutral-600 dark:text-neutral-300">
               Kunjungi toko kami di Jatirahayu — mudah dijangkau dari seluruh
