@@ -10,12 +10,11 @@ export const DURATION = {
 } as const;
 
 export const HERO_DELAYS = {
-  eyebrow: 0.05,
-  line1: 0.25,
-  line2: 0.37,
-  line3: 0.52,
-  meta: 0.75,
-  cta: 0.95,
+  line1: 0.15,
+  line2: 0.28,
+  sub: 0.5,
+  meta: 0.68,
+  cta: 0.85,
 } as const;
 
 export const revealContainer: Variants = {

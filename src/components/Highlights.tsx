@@ -12,7 +12,7 @@ export default function Highlights() {
     <section className="bg-white py-section sm:py-section-lg dark:bg-night-950">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="font-display text-display text-sky-800 dark:text-sky-100">
-          Layanan Unggulan Kami
+          Wujudkan Ide Kreatif Menjadi Hasil Cetak Nyata
         </h2>
         <p className="mt-stack-sm max-w-2xl text-neutral-600 dark:text-neutral-300">
           Kebutuhan cetak yang paling sering dipesan pelanggan kami.

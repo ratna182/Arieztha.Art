@@ -15,10 +15,11 @@ export default function Catalog() {
     <section className="bg-sky-50 py-section sm:py-section-lg dark:bg-night-900">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
-          Katalog Lengkap
+          Cetak Apa Saja, Kapan Saja, Langsung dari Handphone Anda
         </h2>
         <p className="mt-stack-sm max-w-2xl text-neutral-600 dark:text-neutral-300">
-          30+ produk cetak, dikelompokkan per kategori. Klik untuk lihat daftar produknya.
+          Nikmati kemudahan pesan online untuk banner, brosur, kartu nama,
+          hingga merchandise tanpa harus keluar rumah.
         </p>
 
         <div className="mt-stack grid gap-3">

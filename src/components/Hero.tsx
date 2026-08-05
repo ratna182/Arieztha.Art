@@ -64,23 +64,11 @@ export default function Hero() {
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="-mt-24 rounded-2xl border border-white/10 bg-white/95 p-6 shadow-xl backdrop-blur sm:-mt-28 sm:p-10 md:-mt-32 lg:p-12 dark:bg-night-900/95">
-          <m.p
-            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
-            animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-            transition={{ delay: HERO_DELAYS.eyebrow, duration: 0.45, ease: EASE }}
-            className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-600 dark:text-sky-300"
-          >
-            Percetakan · Sablon · Kustom
-          </m.p>
-
-          <h1 className="mt-3 font-display text-hero font-bold text-sky-800 dark:text-sky-100">
+          <h1 className="font-display text-hero font-bold text-sky-800 dark:text-sky-100">
             <MaskedLine delay={HERO_DELAYS.line1}>
-              Percetakan &amp; Sablon
+              Percetakan Express
             </MaskedLine>
             <MaskedLine delay={HERO_DELAYS.line2}>
-              Segala Kebutuhan,
-            </MaskedLine>
-            <MaskedLine delay={HERO_DELAYS.line3}>
               <span className="italic text-sky-500 dark:text-sky-300">
                 Sejak {BUSINESS.since}
               </span>
@@ -90,14 +78,21 @@ export default function Hero() {
           <m.p
             initial={reduceMotion ? false : { opacity: 0, y: 12 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+            transition={{ delay: HERO_DELAYS.sub, duration: 0.55, ease: EASE }}
+            className="mt-4 max-w-xl text-lead text-neutral-600 sm:mt-5 dark:text-neutral-300"
+          >
+            Solusi Cetak Cepat, Mudah, dan Berkualitas untuk Bisnis Anda.
+          </m.p>
+
+          <m.p
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ delay: HERO_DELAYS.meta, duration: 0.55, ease: EASE }}
-            className="mt-4 flex flex-wrap items-center gap-2 text-sm text-neutral-600 sm:mt-5 sm:text-base dark:text-neutral-300"
+            className="mt-3 flex flex-wrap items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300"
           >
             <span className="font-semibold text-sky-600 dark:text-sky-300">
               ★ {BUSINESS.rating} ({BUSINESS.reviewCount} review)
             </span>
-            <span aria-hidden="true">·</span>
-            <span>Terpercaya sejak 2010</span>
             <span aria-hidden="true">·</span>
             <span>Buka 24 jam</span>
           </m.p>

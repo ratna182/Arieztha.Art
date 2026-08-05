@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Highlights from "@/components/Highlights";
+import ValueStrip from "@/components/ValueStrip";
 import Catalog from "@/components/Catalog";
 import WhyUs from "@/components/WhyUs";
 import Testimonials from "@/components/Testimonials";
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Highlights />
+      <ValueStrip />
       <Catalog />
       <WhyUs />
       <Testimonials />
