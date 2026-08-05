@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sky-50: #caf0f8;
+  --color-sky-100: #ade8f4;
+  --color-sky-300: #48cae4;
+  --color-sky-400: #00b4d8;
+  --color-sky-500: #0096c7;
+  --color-sky-600: #0077b6;
+  --color-sky-800: #023e8a;
+  --color-sky-900: #03045e;
+  --color-wa: #25d366;
+
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-lora), ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-neutral-800 antialiased;
+}

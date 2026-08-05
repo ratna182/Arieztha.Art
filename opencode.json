@@ -1,0 +1,4 @@
+{
+  "plugin": ["./.opencode/plugins/ponytail.mjs"],
+  "skills": ["design-taste-frontend", "graphify"]
+}
