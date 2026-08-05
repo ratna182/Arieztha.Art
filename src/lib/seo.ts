@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Arieztha.Art Percetakan Yasin Bekasi | Cetak Cepat & Murah",
   description:
-    "Percetakan & sablon Bekasi sejak 2010: cetak buku yasin, nota, stempel, mug custom, undangan, spanduk. Buka 24 jam, rating 5.0. Pesan via WhatsApp.",
+    "Percetakan & sablon di Bekasi sejak 2010 — cetak buku yasin, nota, stempel, mug custom, undangan, spanduk. Rating 5.0, buka 24 jam. Pesan via WhatsApp.",
   alternates: {
     canonical: "/",
   },
@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     siteName: BUSINESS.fullName,
     title: "Arieztha.Art Percetakan Yasin Bekasi | Cetak Cepat & Murah",
     description:
-      "Percetakan & sablon di Bekasi sejak 2010. Cetak buku yasin, nota, stempel, mug custom, undangan, spanduk. Buka 24 jam, rating 5.0.",
+      "Percetakan & sablon di Bekasi sejak 2010 — cetak buku yasin, nota, stempel, mug custom, undangan, spanduk. Rating 5.0, buka 24 jam.",
     images: [
       {
         url: "/hasil-cetak-percetakan-bekasi.webp",
-        width: 1200,
-        height: 630,
+        width: 912,
+        height: 1083,
         alt: "Percetakan Buku Yasin dan sablon di Bekasi — Arieztha.Art",
       },
     ],

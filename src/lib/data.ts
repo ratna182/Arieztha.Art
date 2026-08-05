@@ -11,7 +11,7 @@ export const BUSINESS = {
 };
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://arieztha-art.example.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://arieztha-art.vercel.app";
 
 export const GEO = {
   latitude: -6.296209,
@@ -57,14 +57,14 @@ export const HIGHLIGHTS: Highlight[] = [
   {
     id: "nota",
     title: "Nota",
-    description: "Cetak nota, bon, kwitansi, dan faktur untuk usaha",
+    description: "Cetak nota, bon, kwitansi, dan faktur untuk usaha di Bekasi",
     message: "Halo, saya mau tanya soal cetak Nota",
     icon: "receipt",
   },
   {
     id: "stempel",
     title: "Stempel",
-    description: "Bikin stempel cepat — karet, plat stenlis, plang nama",
+    description: "Bikin stempel cepat di Bekasi — karet, plat stenlis, plang nama",
     message: "Halo, saya mau tanya soal Stempel & Plat",
     icon: "stamp",
   },

@@ -18,8 +18,8 @@ export default function Catalog() {
           Cetak Apa Saja, Kapan Saja, Langsung dari Handphone Anda
         </h2>
         <p className="mt-stack-sm max-w-2xl text-neutral-600 dark:text-neutral-300">
-          Nikmati kemudahan pesan online untuk banner, brosur, kartu nama,
-          hingga merchandise tanpa harus keluar rumah.
+          Dari cetak undangan, spanduk, hingga ID card custom — semua kebutuhan
+          cetak di Bekasi bisa dipesan online tanpa harus keluar rumah.
         </p>
 
         <div className="mt-stack grid gap-3">

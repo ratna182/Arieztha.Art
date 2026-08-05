@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arieztha-art.example.com/sitemap.xml
+Sitemap: https://arieztha-art.vercel.app/sitemap.xml
