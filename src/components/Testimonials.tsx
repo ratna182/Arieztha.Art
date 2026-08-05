@@ -5,7 +5,7 @@ import { BUSINESS, TESTIMONIALS } from "@/lib/data";
 
 export default function Testimonials() {
   return (
-    <section className="bg-sky-50 py-16 sm:py-20">
+    <section className="bg-sky-50 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-4">
           <div>

@@ -11,7 +11,7 @@ export default function Catalog() {
 
   return (
     <section className="bg-sky-50 py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <h2 className="font-display text-2xl font-bold text-sky-800 sm:text-3xl">
           Katalog Lengkap
         </h2>
@@ -19,7 +19,7 @@ export default function Catalog() {
           30+ produk cetak, dikelompokkan per kategori. Klik untuk lihat daftar produknya.
         </p>
 
-        <div className="mt-8 grid gap-3">
+        <div className="mt-8 grid gap-2">
           {CATALOG.map((cat, i) => {
             const isOpen = open === cat.id;
             return (
@@ -34,10 +34,10 @@ export default function Catalog() {
                 <button
                   onClick={() => setOpen(isOpen ? null : cat.id)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-sky-50 sm:px-6"
+                  className="flex w-full items-center justify-between gap-4 px-4 py-3.5 text-left transition-colors hover:bg-sky-50 sm:px-5"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600">
                       <Icon name={cat.icon} className="h-5 w-5" weight="duotone" />
                     </span>
                     <span className="font-display text-base font-semibold text-sky-800 sm:text-lg">
@@ -62,7 +62,7 @@ export default function Catalog() {
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="flex flex-wrap gap-2 border-t border-sky-50 px-5 py-4 sm:px-6">
+                      <div className="flex flex-wrap gap-2 border-t border-sky-50 px-4 py-3.5 sm:px-5">
                         {cat.items.map((item) => (
                           <span
                             key={item}
@@ -72,7 +72,7 @@ export default function Catalog() {
                           </span>
                         ))}
                       </div>
-                      <div className="px-5 pb-5 sm:px-6">
+                      <div className="px-4 pb-4 sm:px-5">
                         <a
                           href={waLink(cat.message)}
                           target="_blank"

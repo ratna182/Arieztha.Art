@@ -29,20 +29,38 @@ const REASONS = [
 
 export default function WhyUs() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="rounded-3xl bg-sky-800 p-8 sm:p-12">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 className="font-display text-2xl font-bold text-sky-800 sm:text-3xl">
               Kenapa Pilih Kami
             </h2>
-            <p className="mt-3 text-sky-100">
-              Kepercayaan dari ratusan pelanggan adalah alasan terbaik untuk mulai
-              berlangganan.
+            <p className="mt-3 max-w-xl text-neutral-600">
+              Percetakan full-service dengan pengalaman sejak 2010 — dipercaya
+              ratusan pelanggan di Bekasi.
             </p>
+            <p className="mt-4 flex flex-wrap items-center gap-2 text-sm text-neutral-600">
+              <span className="font-semibold text-sky-600">
+                ★ {BUSINESS.rating.toFixed(1)} ({BUSINESS.reviewCount} review)
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>Sejak {BUSINESS.since}</span>
+              <span aria-hidden="true">·</span>
+              <span>{BUSINESS.hours}</span>
+            </p>
+            <a
+              href={waLink(WA_DEFAULT_MESSAGE)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2.5 rounded-full bg-wa px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-wa/30 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
+            >
+              <WhatsAppIcon className="h-6 w-6" />
+              Chat sekarang
+            </a>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
             {REASONS.map((r, i) => (
               <motion.div
                 key={r.title}
@@ -50,15 +68,15 @@ export default function WhyUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="rounded-2xl bg-white/10 p-5 backdrop-blur-sm"
+                className="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-5"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-700 text-sky-100">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
                   <Icon name={r.icon} className="h-6 w-6" weight="duotone" />
                 </span>
-                <h3 className="mt-3 font-display text-lg font-semibold text-white">
+                <h3 className="mt-3 font-display text-lg font-semibold text-sky-800">
                   {r.title}
                 </h3>
-                <p className="mt-1 text-sm text-sky-100/90">{r.description}</p>
+                <p className="mt-1 text-sm text-neutral-600">{r.description}</p>
               </motion.div>
             ))}
           </div>
