@@ -1,10 +1,23 @@
+"use client";
+
+import { m, useReducedMotion } from "motion/react";
 import { BUSINESS, TESTIMONIALS } from "@/lib/data";
+import { DURATION, EASE, revealContainerSlow, revealItemLight } from "@/lib/motion";
+import CountUp from "@/components/CountUp";
 
 export default function Testimonials() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section id="testimoni" className="bg-sky-50 py-section sm:py-section-lg dark:bg-night-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex items-end justify-between gap-4">
+        <m.div
+          initial={reduceMotion ? false : "hidden"}
+          whileInView={reduceMotion ? undefined : "show"}
+          viewport={{ once: true, amount: 0.3 }}
+          variants={reduceMotion ? undefined : revealItemLight}
+          className="flex items-end justify-between gap-4"
+        >
           <div>
             <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
               Kata Mereka
@@ -15,7 +28,7 @@ export default function Testimonials() {
           </div>
           <div className="shrink-0 rounded-2xl bg-white px-4 py-3 text-right shadow-sm dark:bg-night-950">
             <div className="font-display text-2xl font-bold text-sky-600 dark:text-sky-300">
-              {BUSINESS.rating.toFixed(1)}
+              <CountUp to={BUSINESS.rating} decimals={1} />
             </div>
             <div className="flex items-center justify-end gap-0.5" aria-label="Rating 5 dari 5">
               {[1, 2, 3, 4, 5].map((n) => (
@@ -23,16 +36,25 @@ export default function Testimonials() {
               ))}
             </div>
             <div className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-              {BUSINESS.reviewCount} review Google
+              <CountUp to={BUSINESS.reviewCount} /> review Google
             </div>
           </div>
-        </div>
+        </m.div>
 
-        <div className="mt-stack grid gap-grid sm:gap-grid-lg md:grid-cols-3">
+        <m.div
+          variants={reduceMotion ? undefined : revealContainerSlow}
+          initial={reduceMotion ? false : "hidden"}
+          whileInView={reduceMotion ? undefined : "show"}
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-stack grid gap-grid sm:gap-grid-lg md:grid-cols-3"
+        >
           {TESTIMONIALS.map((t) => (
-            <figure
+            <m.figure
               key={t.name}
-              className="flex flex-col rounded-2xl border border-sky-100 bg-white p-card shadow-sm sm:p-card-lg dark:border-white/10 dark:bg-night-950"
+              variants={reduceMotion ? undefined : revealItemLight}
+              whileHover={reduceMotion ? undefined : { y: -2 }}
+              transition={{ duration: DURATION.fast, ease: EASE }}
+              className="flex flex-col rounded-2xl border border-sky-100 bg-white p-card shadow-sm transition-shadow duration-300 ease-premium hover:shadow-lg hover:shadow-sky-100 sm:p-card-lg dark:border-white/10 dark:bg-night-950 dark:shadow-black/20 dark:hover:shadow-black/40"
             >
               <div className="flex items-center gap-0.5" aria-hidden="true">
                 {[1, 2, 3, 4, 5].map((n) => (
@@ -46,9 +68,9 @@ export default function Testimonials() {
                 <div className="font-semibold text-sky-800 dark:text-sky-100">{t.name}</div>
                 <div className="text-sm text-neutral-500 dark:text-neutral-400">{t.role}</div>
               </figcaption>
-            </figure>
+            </m.figure>
           ))}
-        </div>
+        </m.div>
       </div>
     </section>
   );

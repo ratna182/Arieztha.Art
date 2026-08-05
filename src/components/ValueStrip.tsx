@@ -1,7 +1,7 @@
 "use client";
 
 import { m, useReducedMotion } from "motion/react";
-import { revealContainer, revealItem } from "@/lib/motion";
+import { revealContainerSlow, revealItemZoom } from "@/lib/motion";
 
 const PROMISES = [
   "Kualitas Terbaik di Setiap Lembar Cetakan.",
@@ -16,7 +16,7 @@ export default function ValueStrip() {
     <section className="bg-sky-900 py-section sm:py-section-lg">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <m.div
-          variants={revealContainer}
+          variants={reduceMotion ? undefined : revealContainerSlow}
           initial={reduceMotion ? false : "hidden"}
           whileInView={reduceMotion ? undefined : "show"}
           viewport={{ once: true, amount: 0.3 }}
@@ -25,7 +25,7 @@ export default function ValueStrip() {
           {PROMISES.map((text) => (
             <m.p
               key={text}
-              variants={revealItem}
+              variants={reduceMotion ? undefined : revealItemZoom}
               className="font-display text-subheading font-semibold leading-relaxed text-white sm:px-8"
             >
               {text}

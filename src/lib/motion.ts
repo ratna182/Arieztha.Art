@@ -26,3 +26,38 @@ export const revealItem: Variants = {
   hidden: { opacity: 0, y: 20, scale: 0.98 },
   show: { opacity: 1, y: 0, scale: 1, transition: { duration: DURATION.reveal, ease: EASE } },
 };
+
+export const revealContainerFast: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.07 } },
+};
+
+export const revealContainerSlow: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+};
+
+export const revealItemLight: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: DURATION.reveal, ease: EASE } },
+};
+
+export const revealItemUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: DURATION.reveal, ease: EASE } },
+};
+
+export const revealItemRow: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: DURATION.medium, ease: EASE } },
+};
+
+export const revealItemX: Variants = {
+  hidden: { opacity: 0, x: -20 },
+  show: { opacity: 1, x: 0, transition: { duration: DURATION.reveal, ease: EASE } },
+};
+
+export const revealItemZoom: Variants = {
+  hidden: { opacity: 0, scale: 0.92 },
+  show: { opacity: 1, scale: 1, transition: { duration: DURATION.reveal, ease: EASE } },
+};

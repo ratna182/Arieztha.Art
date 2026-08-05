@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { m, useReducedMotion } from "motion/react";
 import { CATALOG, waLink } from "@/lib/data";
-import { EASE } from "@/lib/motion";
+import { EASE, revealContainerFast, revealItemRow } from "@/lib/motion";
 import Icon from "@/components/Icon";
 import { WhatsAppIcon } from "@/components/Icon";
 
@@ -22,19 +22,26 @@ export default function Catalog() {
           cetak di Bekasi bisa dipesan online tanpa harus keluar rumah.
         </p>
 
-        <div className="mt-stack grid gap-3">
+        <m.div
+          variants={reduceMotion ? undefined : revealContainerFast}
+          initial={reduceMotion ? false : "hidden"}
+          whileInView={reduceMotion ? undefined : "show"}
+          viewport={{ once: true, amount: 0.1 }}
+          className="mt-stack grid gap-3"
+        >
           {CATALOG.map((cat) => {
             const isOpen = open === cat.id;
             return (
-              <div
+              <m.div
                 key={cat.id}
+                variants={reduceMotion ? undefined : revealItemRow}
                 className="overflow-hidden rounded-2xl border border-sky-100 bg-white dark:border-white/10 dark:bg-night-950"
               >
                 <h3 className="font-display text-base font-semibold text-sky-800 sm:text-lg dark:text-sky-100">
                   <button
                     onClick={() => setOpen(isOpen ? null : cat.id)}
                     aria-expanded={isOpen}
-                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-sky-50 sm:px-6 dark:hover:bg-white/5"
+                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors duration-150 ease-premium hover:bg-sky-100/60 sm:px-6 dark:hover:bg-white/5"
                   >
                     <span className="flex items-center gap-3">
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600 dark:bg-white/10 dark:text-sky-300">
@@ -93,10 +100,10 @@ export default function Catalog() {
                     </div>
                   </m.div>
                 </m.div>
-              </div>
+              </m.div>
             );
           })}
-        </div>
+        </m.div>
       </div>
     </section>
   );

@@ -48,6 +48,13 @@ export default function Hero() {
       >
         <m.div
           style={reduceMotion ? undefined : { y: parallaxY }}
+          initial={reduceMotion ? false : { scale: 1.06 }}
+          animate={reduceMotion ? undefined : { scale: 1 }}
+          transition={
+            reduceMotion
+              ? undefined
+              : { duration: DURATION.heroLine, ease: EASE }
+          }
           className="absolute inset-x-0 -inset-y-10"
         >
           <Image

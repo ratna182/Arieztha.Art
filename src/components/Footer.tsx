@@ -1,13 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import { m, useReducedMotion } from "motion/react";
 import { BUSINESS, NAV_LINKS } from "@/lib/data";
+import { revealContainerFast, revealItemLight } from "@/lib/motion";
 import WaButton from "@/components/WaButton";
 
 export default function Footer() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <footer className="bg-sky-900 text-sky-100">
       <div className="mx-auto max-w-6xl px-4 py-section sm:px-6">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="lg:col-span-2">
+        <m.div
+          variants={reduceMotion ? undefined : revealContainerFast}
+          initial={reduceMotion ? false : "hidden"}
+          whileInView={reduceMotion ? undefined : "show"}
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <m.div variants={reduceMotion ? undefined : revealItemLight} className="lg:col-span-2">
             <div className="flex items-center gap-3">
               <Image
                 src="/logo-arieztha-art.webp"
@@ -30,9 +42,9 @@ export default function Footer() {
               stempel, mug custom, dan berbagai kebutuhan cetak lain di Bekasi
               dengan hasil berkualitas dan harga terjangkau.
             </p>
-          </div>
+          </m.div>
 
-          <div>
+          <m.div variants={reduceMotion ? undefined : revealItemLight}>
             <h2 className="text-sm font-semibold uppercase tracking-wider text-sky-300">
               Navigasi
             </h2>
@@ -48,9 +60,9 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </m.div>
 
-          <div>
+          <m.div variants={reduceMotion ? undefined : revealItemLight}>
             <h2 className="text-sm font-semibold uppercase tracking-wider text-sky-300">
               Kontak
             </h2>
@@ -62,8 +74,8 @@ export default function Footer() {
             <WaButton className="mt-5 min-h-11 px-5 py-2.5 text-sm">
               Hubungi Kami
             </WaButton>
-          </div>
-        </div>
+          </m.div>
+        </m.div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-sky-300">
           <p>
