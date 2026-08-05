@@ -12,7 +12,7 @@ export default function Catalog() {
   return (
     <section className="bg-sky-50 py-16 sm:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <h2 className="font-display text-2xl font-bold text-sky-800 sm:text-3xl">
+        <h2 className="font-display text-heading text-sky-800">
           Katalog Lengkap
         </h2>
         <p className="mt-2 max-w-2xl text-neutral-600">

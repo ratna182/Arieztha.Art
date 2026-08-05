@@ -8,7 +8,7 @@ export default function Highlights() {
   return (
     <section className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="font-display text-2xl font-bold text-sky-800 sm:text-3xl">
+        <h2 className="font-display text-display text-sky-800">
           Layanan Unggulan Kami
         </h2>
         <p className="mt-2 max-w-2xl text-neutral-600">
@@ -31,7 +31,7 @@ export default function Highlights() {
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 transition-colors duration-300 group-hover:bg-sky-500 group-hover:text-white">
                 <Icon name={item.icon} className="h-6 w-6" weight="duotone" />
               </span>
-              <h3 className="mt-4 font-display text-base font-semibold text-sky-800 sm:text-lg">
+              <h3 className="mt-4 font-display text-subheading font-semibold text-sky-800">
                 {item.title}
               </h3>
               <p className="mt-1 text-sm text-neutral-600">{item.description}</p>

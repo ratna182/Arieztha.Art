@@ -27,12 +27,12 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="-mt-24 rounded-2xl border border-white/10 bg-white/95 p-6 shadow-xl backdrop-blur sm:-mt-28 sm:p-10 md:-mt-32 lg:p-12"
         >
-          <h1 className="font-display text-3xl font-bold leading-tight text-sky-800 sm:text-4xl md:text-5xl">
+          <h1 className="pb-1 font-display text-hero font-bold text-sky-800">
             Percetakan & Sablon Segala Kebutuhan,{" "}
-            <span className="text-sky-500">Sejak {BUSINESS.since}</span>
+            <span className="italic text-sky-500">Sejak {BUSINESS.since}</span>
           </h1>
 
-          <p className="mt-3 flex flex-wrap items-center gap-2 text-sm text-neutral-600 sm:mt-4 sm:text-base">
+          <p className="mt-4 flex flex-wrap items-center gap-2 text-sm text-neutral-600 sm:mt-5 sm:text-base">
             <span className="font-semibold text-sky-600">
               ★ {BUSINESS.rating} ({BUSINESS.reviewCount} review)
             </span>

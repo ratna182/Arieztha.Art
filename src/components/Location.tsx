@@ -15,7 +15,7 @@ export default function Location() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="font-display text-2xl font-bold text-sky-800 sm:text-3xl">
+            <h2 className="font-display text-heading text-sky-800">
               Kunjungi Kami
             </h2>
             <div className="mt-6 space-y-4 text-neutral-700">

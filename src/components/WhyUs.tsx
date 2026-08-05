@@ -33,7 +33,7 @@ export default function WhyUs() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="font-display text-2xl font-bold text-sky-800 sm:text-3xl">
+            <h2 className="font-display text-heading text-sky-800">
               Kenapa Pilih Kami
             </h2>
             <p className="mt-3 max-w-xl text-neutral-600">
@@ -73,7 +73,7 @@ export default function WhyUs() {
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
                   <Icon name={r.icon} className="h-6 w-6" weight="duotone" />
                 </span>
-                <h3 className="mt-3 font-display text-lg font-semibold text-sky-800">
+                <h3 className="mt-3 font-display text-subheading font-semibold text-sky-800">
                   {r.title}
                 </h3>
                 <p className="mt-1 text-sm text-neutral-600">{r.description}</p>

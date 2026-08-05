@@ -9,7 +9,7 @@ export default function Testimonials() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="font-display text-2xl font-bold text-sky-800 sm:text-3xl">
+            <h2 className="font-display text-heading text-sky-800">
               Kata Mereka
             </h2>
             <p className="mt-2 text-neutral-600">
