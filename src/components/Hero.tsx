@@ -28,21 +28,21 @@ export default function Hero() {
           variants={heroContainer}
           initial={reduceMotion ? false : "hidden"}
           animate="show"
-          className="-mt-24 rounded-2xl border border-white/10 bg-white/95 p-6 shadow-xl backdrop-blur sm:-mt-28 sm:p-10 md:-mt-32 lg:p-12"
+          className="-mt-24 rounded-2xl border border-white/10 bg-white/95 p-6 shadow-xl backdrop-blur sm:-mt-28 sm:p-10 md:-mt-32 lg:p-12 dark:bg-night-900/95"
         >
           <m.h1
             variants={heroItem}
-            className="pb-1 font-display text-hero font-bold text-sky-800"
+            className="pb-1 font-display text-hero font-bold text-sky-800 dark:text-sky-100"
           >
             Percetakan & Sablon Segala Kebutuhan,{" "}
-            <span className="italic text-sky-500">Sejak {BUSINESS.since}</span>
+            <span className="italic text-sky-500 dark:text-sky-300">Sejak {BUSINESS.since}</span>
           </m.h1>
 
           <m.p
             variants={heroItem}
-            className="mt-4 flex flex-wrap items-center gap-2 text-sm text-neutral-600 sm:mt-5 sm:text-base"
+            className="mt-4 flex flex-wrap items-center gap-2 text-sm text-neutral-600 sm:mt-5 sm:text-base dark:text-neutral-300"
           >
-            <span className="font-semibold text-sky-600">
+            <span className="font-semibold text-sky-600 dark:text-sky-300">
               ★ {BUSINESS.rating} ({BUSINESS.reviewCount} review)
             </span>
             <span aria-hidden="true">·</span>

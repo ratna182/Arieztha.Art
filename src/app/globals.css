@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-sky-50: #caf0f8;
   --color-sky-100: #ade8f4;
@@ -11,6 +13,8 @@
   --color-sky-900: #03045e;
   --color-wa: #25d366;
   --color-wa-700: #128c4a;
+  --color-night-900: #0a1128;
+  --color-night-950: #05091c;
 
   --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-lora), ui-serif, Georgia, serif;
@@ -58,5 +62,9 @@ html {
 }
 
 body {
-  @apply bg-white text-neutral-800 antialiased;
+  @apply bg-white text-neutral-800 antialiased dark:bg-night-950 dark:text-neutral-200;
+}
+
+html.dark {
+  color-scheme: dark;
 }

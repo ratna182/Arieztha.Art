@@ -12,12 +12,12 @@ export default function Catalog() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-sky-50 py-section sm:py-section-lg">
+    <section className="bg-sky-50 py-section sm:py-section-lg dark:bg-night-900">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <h2 className="font-display text-heading text-sky-800">
+        <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
           Katalog Lengkap
         </h2>
-        <p className="mt-stack-sm max-w-2xl text-neutral-600">
+        <p className="mt-stack-sm max-w-2xl text-neutral-600 dark:text-neutral-300">
           30+ produk cetak, dikelompokkan per kategori. Klik untuk lihat daftar produknya.
         </p>
 
@@ -27,24 +27,24 @@ export default function Catalog() {
             return (
               <div
                 key={cat.id}
-                className="overflow-hidden rounded-2xl border border-sky-100 bg-white"
+                className="overflow-hidden rounded-2xl border border-sky-100 bg-white dark:border-white/10 dark:bg-night-950"
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : cat.id)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-sky-50 sm:px-6"
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-sky-50 sm:px-6 dark:hover:bg-white/5"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600 dark:bg-white/10 dark:text-sky-300">
                       <Icon name={cat.icon} className="h-5 w-5" weight="duotone" />
                     </span>
-                    <span className="font-display text-base font-semibold text-sky-800 sm:text-lg">
+                    <span className="font-display text-base font-semibold text-sky-800 sm:text-lg dark:text-sky-100">
                       {cat.title}
                     </span>
                   </span>
                   <span
                     aria-hidden="true"
-                    className={`text-sky-400 transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
+                    className={`text-sky-400 transition-transform duration-300 dark:text-sky-300 ${isOpen ? "rotate-45" : ""}`}
                   >
                     <Icon name="plus" className="h-6 w-6" weight="bold" />
                   </span>
@@ -64,11 +64,11 @@ export default function Catalog() {
                       }
                       className="overflow-hidden"
                     >
-                      <div className="flex flex-wrap gap-chip border-t border-sky-50 px-5 py-5 sm:px-6">
+                      <div className="flex flex-wrap gap-chip border-t border-sky-50 px-5 py-5 sm:px-6 dark:border-white/10">
                         {cat.items.map((item) => (
                           <span
                             key={item}
-                            className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3.5 py-2 text-sm text-sky-800"
+                            className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3.5 py-2 text-sm text-sky-800 dark:border-white/10 dark:bg-white/10 dark:text-sky-100"
                           >
                             {item}
                           </span>

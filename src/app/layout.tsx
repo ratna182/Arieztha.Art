@@ -1,4 +1,5 @@
 import { Lora, Plus_Jakarta_Sans } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import MotionProvider from "@/components/MotionProvider";
 
@@ -20,9 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" suppressHydrationWarning>
       <body className={`${plusJakarta.variable} ${lora.variable} font-sans`}>
-        <MotionProvider>{children}</MotionProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <MotionProvider>{children}</MotionProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -2,19 +2,19 @@ import { BUSINESS, TESTIMONIALS } from "@/lib/data";
 
 export default function Testimonials() {
   return (
-    <section className="bg-sky-50 py-section sm:py-section-lg">
+    <section className="bg-sky-50 py-section sm:py-section-lg dark:bg-night-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="font-display text-heading text-sky-800">
+            <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
               Kata Mereka
             </h2>
-            <p className="mt-stack-sm text-neutral-600">
+            <p className="mt-stack-sm text-neutral-600 dark:text-neutral-300">
               Sebagian review dari Google Reviews kami.
             </p>
           </div>
-          <div className="shrink-0 rounded-2xl bg-white px-4 py-3 text-right shadow-sm">
-            <div className="font-display text-2xl font-bold text-sky-600">
+          <div className="shrink-0 rounded-2xl bg-white px-4 py-3 text-right shadow-sm dark:bg-night-950">
+            <div className="font-display text-2xl font-bold text-sky-600 dark:text-sky-300">
               {BUSINESS.rating.toFixed(1)}
             </div>
             <div className="flex items-center justify-end gap-0.5" aria-label="Rating 5 dari 5">
@@ -22,7 +22,7 @@ export default function Testimonials() {
                 <Star key={n} />
               ))}
             </div>
-            <div className="mt-1 text-xs text-neutral-500">
+            <div className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
               {BUSINESS.reviewCount} review Google
             </div>
           </div>
@@ -32,19 +32,19 @@ export default function Testimonials() {
           {TESTIMONIALS.map((t) => (
             <figure
               key={t.name}
-              className="flex flex-col rounded-2xl border border-sky-100 bg-white p-card shadow-sm sm:p-card-lg"
+              className="flex flex-col rounded-2xl border border-sky-100 bg-white p-card shadow-sm sm:p-card-lg dark:border-white/10 dark:bg-night-950"
             >
               <div className="flex items-center gap-0.5" aria-hidden="true">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <Star key={n} />
                 ))}
               </div>
-              <blockquote className="mt-3 flex-1 leading-relaxed text-neutral-700">
+              <blockquote className="mt-3 flex-1 leading-relaxed text-neutral-700 dark:text-neutral-300">
                 “{t.quote}”
               </blockquote>
-              <figcaption className="mt-4 border-t border-sky-50 pt-4">
-                <div className="font-semibold text-sky-800">{t.name}</div>
-                <div className="text-sm text-neutral-500">{t.role}</div>
+              <figcaption className="mt-4 border-t border-sky-50 pt-4 dark:border-white/10">
+                <div className="font-semibold text-sky-800 dark:text-sky-100">{t.name}</div>
+                <div className="text-sm text-neutral-500 dark:text-neutral-400">{t.role}</div>
               </figcaption>
             </figure>
           ))}

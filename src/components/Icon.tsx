@@ -15,6 +15,8 @@ import {
   Star,
   Clock,
   Palette,
+  Sun,
+  Moon,
   WhatsappLogo,
   type Icon,
 } from "@phosphor-icons/react";
@@ -34,6 +36,8 @@ const ICONS: Record<string, Icon> = {
   star: Star,
   clock: Clock,
   palette: Palette,
+  sun: Sun,
+  moon: Moon,
   whatsapp: WhatsappLogo,
 };
 
