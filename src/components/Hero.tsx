@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { BUSINESS } from "@/lib/data";
 import { heroContainer, heroItem } from "@/lib/motion";
 import WaButton from "@/components/WaButton";
@@ -24,21 +24,21 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <motion.div
+        <m.div
           variants={heroContainer}
           initial={reduceMotion ? false : "hidden"}
           animate="show"
           className="-mt-24 rounded-2xl border border-white/10 bg-white/95 p-6 shadow-xl backdrop-blur sm:-mt-28 sm:p-10 md:-mt-32 lg:p-12"
         >
-          <motion.h1
+          <m.h1
             variants={heroItem}
             className="pb-1 font-display text-hero font-bold text-sky-800"
           >
             Percetakan & Sablon Segala Kebutuhan,{" "}
             <span className="italic text-sky-500">Sejak {BUSINESS.since}</span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             variants={heroItem}
             className="mt-4 flex flex-wrap items-center gap-2 text-sm text-neutral-600 sm:mt-5 sm:text-base"
           >
@@ -49,14 +49,14 @@ export default function Hero() {
             <span>Terpercaya sejak 2010</span>
             <span aria-hidden="true">·</span>
             <span>Buka 24 jam</span>
-          </motion.p>
+          </m.p>
 
-          <motion.div variants={heroItem} className="mt-6 sm:mt-8">
+          <m.div variants={heroItem} className="mt-6 sm:mt-8">
             <WaButton className="px-6 py-3.5 text-base">
               Pesan via WhatsApp
             </WaButton>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
     </section>
   );

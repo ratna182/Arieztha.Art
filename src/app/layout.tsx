@@ -1,5 +1,6 @@
 import { Lora, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import MotionProvider from "@/components/MotionProvider";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={`${plusJakarta.variable} ${lora.variable} font-sans`}>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

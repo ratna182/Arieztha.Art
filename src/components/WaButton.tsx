@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { waLink, WA_DEFAULT_MESSAGE } from "@/lib/data";
 import { WhatsAppIcon } from "@/components/Icon";
 
@@ -16,7 +16,7 @@ export default function WaButton({
   const reduceMotion = useReducedMotion();
 
   return (
-    <motion.a
+    <m.a
       href={waLink(message)}
       target="_blank"
       rel="noopener noreferrer"
@@ -30,6 +30,6 @@ export default function WaButton({
     >
       <WhatsAppIcon className="h-6 w-6" />
       {children}
-    </motion.a>
+    </m.a>
   );
 }

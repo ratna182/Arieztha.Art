@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, m, useReducedMotion } from "motion/react";
 import { CATALOG, waLink } from "@/lib/data";
 import { EASE } from "@/lib/motion";
 import Icon from "@/components/Icon";
@@ -52,7 +52,7 @@ export default function Catalog() {
 
                 <AnimatePresence initial={false}>
                   {isOpen && (
-                    <motion.div
+                    <m.div
                       key="content"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
@@ -85,8 +85,8 @@ export default function Catalog() {
                           Tanya soal {cat.title}
                         </a>
                       </div>
-                    </motion.div>
-                  )} 
+                    </m.div>
+                  )}
                 </AnimatePresence>
               </div>
             );

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { HIGHLIGHTS, waLink } from "@/lib/data";
 import { revealContainer, revealItem } from "@/lib/motion";
 import Icon from "@/components/Icon";
@@ -18,7 +18,7 @@ export default function Highlights() {
           Kebutuhan cetak yang paling sering dipesan pelanggan kami.
         </p>
 
-        <motion.div
+        <m.div
           variants={revealContainer}
           initial={reduceMotion ? false : "hidden"}
           whileInView={reduceMotion ? undefined : "show"}
@@ -26,7 +26,7 @@ export default function Highlights() {
           className="mt-stack grid grid-cols-2 gap-grid sm:gap-grid-lg lg:grid-cols-4"
         >
           {HIGHLIGHTS.map((item) => (
-            <motion.a
+            <m.a
               key={item.id}
               variants={revealItem}
               href={waLink(item.message)}
@@ -47,9 +47,9 @@ export default function Highlights() {
                   →
                 </span>
               </span>
-            </motion.a>
+            </m.a>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );
