@@ -14,8 +14,8 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://arieztha-art.vercel.app";
 
 export const GEO = {
-  latitude: -6.296209,
-  longitude: 106.921045,
+  latitude: -6.2894443,
+  longitude: 106.9159477,
 };
 
 export const GOOGLE_PLACE_ID = "ChIJhdZDm8OTaS4Rdti5NnP6Ayc";

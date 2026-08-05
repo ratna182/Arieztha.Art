@@ -1,11 +1,11 @@
 "use client";
 
 import { m, useReducedMotion } from "motion/react";
-import { BUSINESS, GOOGLE_PLACE_ID } from "@/lib/data";
+import { BUSINESS, GEO } from "@/lib/data";
 import { DURATION, EASE, revealItemX } from "@/lib/motion";
 import WaButton from "@/components/WaButton";
 
-const MAP_EMBED_SRC = `https://www.google.com/maps?q=place_id:${GOOGLE_PLACE_ID}&output=embed`;
+const MAP_EMBED_SRC = `https://maps.google.com/maps?q=${GEO.latitude},${GEO.longitude}&hl=id&z=17&output=embed`;
 
 export default function Location() {
   const reduceMotion = useReducedMotion();
