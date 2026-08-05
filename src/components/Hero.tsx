@@ -44,7 +44,7 @@ export default function Hero() {
     <section id="top" className="relative">
       <div
         ref={bannerRef}
-        className="relative aspect-[16/9] w-full overflow-hidden bg-sky-900 sm:aspect-[21/9] md:aspect-[3/1]"
+        className="relative min-h-[560px] w-full overflow-hidden bg-sky-900 sm:min-h-[620px] lg:min-h-[640px]"
       >
         <m.div
           style={reduceMotion ? undefined : { y: parallaxY }}
@@ -59,54 +59,54 @@ export default function Hero() {
             className="object-cover"
           />
         </m.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-sky-900/90 via-sky-900/40 to-sky-900/20" />
-      </div>
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="-mt-24 rounded-2xl border border-white/10 bg-white/95 p-6 shadow-xl backdrop-blur sm:-mt-28 sm:p-10 md:-mt-32 lg:p-12 dark:bg-night-900/95">
-          <h1 className="font-display text-hero font-bold text-sky-800 dark:text-sky-100">
-            <MaskedLine delay={HERO_DELAYS.line1}>
-              Percetakan Express
-            </MaskedLine>
-            <MaskedLine delay={HERO_DELAYS.line2}>
-              <span className="italic text-sky-500 dark:text-sky-300">
-                Sejak {BUSINESS.since}
+        <div className="hero-overlay absolute inset-0" />
+        <div className="hero-nav-fade pointer-events-none absolute inset-x-0 top-0 h-12 sm:h-14" />
+
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="mx-auto w-full max-w-6xl px-4 pb-12 sm:px-6 sm:pb-16">
+            <h1 className="font-display text-hero font-bold text-white drop-shadow-[0_2px_10px_rgba(2,4,32,0.55)]">
+              <MaskedLine delay={HERO_DELAYS.line1}>
+                Percetakan Express
+              </MaskedLine>
+              <MaskedLine delay={HERO_DELAYS.line2}>
+                <span className="italic text-emerald-300">Sejak {BUSINESS.since}</span>
+              </MaskedLine>
+            </h1>
+
+            <m.p
+              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+              transition={{ delay: HERO_DELAYS.sub, duration: 0.55, ease: EASE }}
+              className="mt-4 max-w-xl text-lead text-sky-50 sm:mt-5"
+            >
+              Solusi Cetak Cepat, Mudah, dan Berkualitas untuk Bisnis Anda.
+            </m.p>
+
+            <m.p
+              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+              transition={{ delay: HERO_DELAYS.meta, duration: 0.55, ease: EASE }}
+              className="mt-3 flex flex-wrap items-center gap-2 text-sm text-sky-100/90"
+            >
+              <span className="font-semibold text-white">
+                ★ {BUSINESS.rating} ({BUSINESS.reviewCount} review)
               </span>
-            </MaskedLine>
-          </h1>
+              <span aria-hidden="true">·</span>
+              <span>Buka 24 jam</span>
+            </m.p>
 
-          <m.p
-            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-            animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-            transition={{ delay: HERO_DELAYS.sub, duration: 0.55, ease: EASE }}
-            className="mt-4 max-w-xl text-lead text-neutral-600 sm:mt-5 dark:text-neutral-300"
-          >
-            Solusi Cetak Cepat, Mudah, dan Berkualitas untuk Bisnis Anda.
-          </m.p>
-
-          <m.p
-            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-            animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-            transition={{ delay: HERO_DELAYS.meta, duration: 0.55, ease: EASE }}
-            className="mt-3 flex flex-wrap items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300"
-          >
-            <span className="font-semibold text-sky-600 dark:text-sky-300">
-              ★ {BUSINESS.rating} ({BUSINESS.reviewCount} review)
-            </span>
-            <span aria-hidden="true">·</span>
-            <span>Buka 24 jam</span>
-          </m.p>
-
-          <m.div
-            initial={reduceMotion ? false : { opacity: 0, y: 12, scale: 0.95 }}
-            animate={reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: HERO_DELAYS.cta, duration: 0.55, ease: EASE }}
-            className="mt-6 sm:mt-8"
-          >
-            <WaButton className="px-6 py-3.5 text-base">
-              Pesan via WhatsApp
-            </WaButton>
-          </m.div>
+            <m.div
+              initial={reduceMotion ? false : { opacity: 0, y: 12, scale: 0.95 }}
+              animate={reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: HERO_DELAYS.cta, duration: 0.55, ease: EASE }}
+              className="mt-6 sm:mt-8"
+            >
+              <WaButton className="px-6 py-3.5 text-base">
+                Pesan via WhatsApp
+              </WaButton>
+            </m.div>
+          </div>
         </div>
       </div>
     </section>

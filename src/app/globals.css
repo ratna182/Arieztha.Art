@@ -70,3 +70,28 @@ body {
 html.dark {
   color-scheme: dark;
 }
+
+@utility hero-overlay {
+  background-image:
+    linear-gradient(
+      to top,
+      rgb(2 4 32 / 0.96) 0%,
+      rgb(2 4 32 / 0.82) 30%,
+      rgb(2 4 32 / 0.5) 55%,
+      rgb(2 4 32 / 0.18) 78%,
+      rgb(2 4 32 / 0) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgb(2 4 32 / 0.55) 0%,
+      rgb(2 4 32 / 0) 58%
+    );
+}
+
+@utility hero-nav-fade {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(2 4 32 / 0.65) 0%,
+    rgb(2 4 32 / 0) 100%
+  );
+}
