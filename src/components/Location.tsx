@@ -11,14 +11,14 @@ const MAP_EMBED_SRC =
 
 export default function Location() {
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section className="bg-white py-section sm:py-section-lg">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <h2 className="font-display text-heading text-sky-800">
               Kunjungi Kami
             </h2>
-            <div className="mt-6 space-y-4 text-neutral-700">
+            <div className="mt-8 space-y-5 text-neutral-700">
               <div className="flex gap-3">
                 <span className="mt-0.5 font-medium text-sky-600">Alamat</span>
                 <span>{BUSINESS.address}</span>
@@ -37,7 +37,7 @@ export default function Location() {
               href={waLink(WA_DEFAULT_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-wa px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-wa/30 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
+              className="mt-10 inline-flex items-center gap-2.5 rounded-full bg-wa px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-wa/30 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
             >
               <WhatsAppIcon className="h-6 w-6" />
               Pesan via WhatsApp

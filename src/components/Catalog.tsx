@@ -10,16 +10,16 @@ export default function Catalog() {
   const [open, setOpen] = useState<string | null>("buku-yasin");
 
   return (
-    <section className="bg-sky-50 py-16 sm:py-20">
+    <section className="bg-sky-50 py-section sm:py-section-lg">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <h2 className="font-display text-heading text-sky-800">
           Katalog Lengkap
         </h2>
-        <p className="mt-2 max-w-2xl text-neutral-600">
+        <p className="mt-stack-sm max-w-2xl text-neutral-600">
           30+ produk cetak, dikelompokkan per kategori. Klik untuk lihat daftar produknya.
         </p>
 
-        <div className="mt-8 grid gap-2">
+        <div className="mt-stack grid gap-3">
           {CATALOG.map((cat, i) => {
             const isOpen = open === cat.id;
             return (
@@ -34,7 +34,7 @@ export default function Catalog() {
                 <button
                   onClick={() => setOpen(isOpen ? null : cat.id)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-4 py-3.5 text-left transition-colors hover:bg-sky-50 sm:px-5"
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-sky-50 sm:px-6"
                 >
                   <span className="flex items-center gap-3">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-600">
@@ -62,17 +62,17 @@ export default function Catalog() {
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="flex flex-wrap gap-2 border-t border-sky-50 px-4 py-3.5 sm:px-5">
+                      <div className="flex flex-wrap gap-chip border-t border-sky-50 px-5 py-5 sm:px-6">
                         {cat.items.map((item) => (
                           <span
                             key={item}
-                            className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3 py-1.5 text-sm text-sky-800"
+                            className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3.5 py-2 text-sm text-sky-800"
                           >
                             {item}
                           </span>
                         ))}
                       </div>
-                      <div className="px-4 pb-4 sm:px-5">
+                      <div className="px-5 pb-5 sm:px-6">
                         <a
                           href={waLink(cat.message)}
                           target="_blank"

@@ -5,7 +5,7 @@ import { WhatsAppIcon } from "@/components/Icon";
 export default function Footer() {
   return (
     <footer className="bg-sky-900 text-sky-100">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 py-section sm:px-6">
         <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
           <div className="flex items-center gap-3">
             <Image
@@ -37,7 +37,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="mt-8 border-t border-white/10 pt-6 text-center text-sm text-sky-300">
+        <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-sky-300">
           {BUSINESS.address}
         </div>
       </div>

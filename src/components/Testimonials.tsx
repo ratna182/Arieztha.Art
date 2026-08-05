@@ -5,14 +5,14 @@ import { BUSINESS, TESTIMONIALS } from "@/lib/data";
 
 export default function Testimonials() {
   return (
-    <section className="bg-sky-50 py-16 sm:py-24">
+    <section className="bg-sky-50 py-section sm:py-section-lg">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-heading text-sky-800">
               Kata Mereka
             </h2>
-            <p className="mt-2 text-neutral-600">
+            <p className="mt-stack-sm text-neutral-600">
               Sebagian review dari Google Reviews kami.
             </p>
           </div>
@@ -31,7 +31,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 sm:gap-6 md:grid-cols-3">
+        <div className="mt-stack grid gap-grid sm:gap-grid-lg md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <motion.figure
               key={t.name}
@@ -39,7 +39,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col rounded-2xl border border-sky-100 bg-white p-6 shadow-sm"
+              className="flex flex-col rounded-2xl border border-sky-100 bg-white p-card shadow-sm sm:p-card-lg"
             >
               <div className="flex items-center gap-0.5" aria-hidden="true">
                 {[1, 2, 3, 4, 5].map((n) => (

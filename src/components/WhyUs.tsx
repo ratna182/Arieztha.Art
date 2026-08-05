@@ -29,14 +29,14 @@ const REASONS = [
 
 export default function WhyUs() {
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section className="bg-white py-section sm:py-section-lg">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <h2 className="font-display text-heading text-sky-800">
               Kenapa Pilih Kami
             </h2>
-            <p className="mt-3 max-w-xl text-neutral-600">
+            <p className="mt-stack-sm max-w-xl text-neutral-600">
               Percetakan full-service dengan pengalaman sejak 2010 — dipercaya
               ratusan pelanggan di Bekasi.
             </p>
@@ -60,7 +60,7 @@ export default function WhyUs() {
             </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 gap-grid sm:gap-grid-lg">
             {REASONS.map((r, i) => (
               <motion.div
                 key={r.title}
@@ -68,15 +68,15 @@ export default function WhyUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-5"
+                className="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-card"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
                   <Icon name={r.icon} className="h-6 w-6" weight="duotone" />
                 </span>
-                <h3 className="mt-3 font-display text-subheading font-semibold text-sky-800">
+                <h3 className="mt-4 font-display text-subheading font-semibold text-sky-800">
                   {r.title}
                 </h3>
-                <p className="mt-1 text-sm text-neutral-600">{r.description}</p>
+                <p className="mt-2 text-sm text-neutral-600">{r.description}</p>
               </motion.div>
             ))}
           </div>

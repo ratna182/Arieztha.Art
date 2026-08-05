@@ -40,6 +40,16 @@
 
   --text-caption: 0.875rem;
   --text-caption--line-height: 1.5;
+
+  --spacing-section: 5rem;
+  --spacing-section-lg: 7rem;
+  --spacing-grid: 1.5rem;
+  --spacing-grid-lg: 2rem;
+  --spacing-card: 1.5rem;
+  --spacing-card-lg: 2rem;
+  --spacing-stack-sm: 0.75rem;
+  --spacing-stack: 2.5rem;
+  --spacing-chip: 0.625rem;
 }
 
 html {
