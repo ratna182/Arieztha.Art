@@ -18,7 +18,7 @@ export const GEO = {
   longitude: 106.9159477,
 };
 
-export const GOOGLE_PLACE_ID = "ChIJhdZDm8OTaS4Rdti5NnP6Ayc";
+export const GOOGLE_PLACE_FTID = "0x2e6993c39b43d685:0x2703fa7336b9d876";
 
 export function waLink(message: string): string {
   return `https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(message)}`;
