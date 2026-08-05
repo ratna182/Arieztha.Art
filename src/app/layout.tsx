@@ -1,10 +1,18 @@
 import { Lora, Plus_Jakarta_Sans } from "next/font/google";
+import type { Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import MotionProvider from "@/components/MotionProvider";
 import { metadata } from "@/lib/seo";
 
 export { metadata };
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#05091c" },
+  ],
+};
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",

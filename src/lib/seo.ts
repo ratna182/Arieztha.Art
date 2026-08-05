@@ -41,9 +41,15 @@ export const localBusinessJsonLd = {
   "@id": `${SITE_URL}/#business`,
   name: BUSINESS.fullName,
   url: SITE_URL,
+  description:
+    "Percetakan & sablon di Bekasi sejak 2010 — cetak buku yasin, nota, stempel, mug custom, undangan, spanduk. Buka 24 jam.",
   telephone: `+${BUSINESS.whatsappNumber}`,
   image: `${SITE_URL}/hasil-cetak-percetakan-bekasi.webp`,
   priceRange: "Rp",
+  hasMap: "https://maps.google.com/?cid=2811365965155653750",
+  sameAs: [
+    "https://www.google.com/maps/place/Arieztha.Art+Percetakan+Yasin/@-6.2894443,106.9159477,17z/data=!4m6!3m5!1s0x2e6993c39b43d685:0x2703fa7336b9d876!8m2!3d-6.2894443!4d106.9159477!16s%2Fg%2F11gr3zlxlz",
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Jl. Raya Hankam No.72, Jatirahayu, Pondok Melati",
