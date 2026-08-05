@@ -55,6 +55,8 @@
   --spacing-stack-sm: 0.75rem;
   --spacing-stack: 2.5rem;
   --spacing-chip: 0.625rem;
+
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {

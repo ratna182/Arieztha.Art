@@ -44,9 +44,9 @@ export default function Catalog() {
                   </span>
                   <span
                     aria-hidden="true"
-                    className={`text-sky-400 transition-transform duration-300 dark:text-sky-300 ${isOpen ? "rotate-45" : ""}`}
+                    className={`text-sky-400 transition-transform duration-[350ms] ease-premium dark:text-sky-300 ${isOpen ? "rotate-180" : ""}`}
                   >
-                    <Icon name="plus" className="h-6 w-6" weight="bold" />
+                    <Icon name="chevronDown" className="h-5 w-5" weight="bold" />
                   </span>
                 </button>
 
@@ -54,9 +54,9 @@ export default function Catalog() {
                   {isOpen && (
                     <m.div
                       key="content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
+                      initial={{ height: 0 }}
+                      animate={{ height: "auto" }}
+                      exit={{ height: 0 }}
                       transition={
                         reduceMotion
                           ? { duration: 0 }
@@ -64,27 +64,37 @@ export default function Catalog() {
                       }
                       className="overflow-hidden"
                     >
-                      <div className="flex flex-wrap gap-chip border-t border-sky-50 px-5 py-5 sm:px-6 dark:border-white/10">
-                        {cat.items.map((item) => (
-                          <span
-                            key={item}
-                            className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3.5 py-2 text-sm text-sky-800 dark:border-white/10 dark:bg-white/10 dark:text-sky-100"
+                      <m.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={
+                          reduceMotion
+                            ? { duration: 0 }
+                            : { delay: 0.1, duration: 0.3, ease: EASE }
+                        }
+                      >
+                        <div className="flex flex-wrap gap-chip border-t border-sky-50 px-5 py-5 sm:px-6 dark:border-white/10">
+                          {cat.items.map((item) => (
+                            <span
+                              key={item}
+                              className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3.5 py-2 text-sm text-sky-800 dark:border-white/10 dark:bg-white/10 dark:text-sky-100"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="px-5 pb-5 sm:px-6">
+                          <a
+                            href={waLink(cat.message)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full border border-wa/40 bg-wa/5 px-4 py-2 text-sm font-medium text-wa-700 transition-colors hover:bg-wa hover:text-white"
                           >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="px-5 pb-5 sm:px-6">
-                        <a
-                          href={waLink(cat.message)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full border border-wa/40 bg-wa/5 px-4 py-2 text-sm font-medium text-wa-700 transition-colors hover:bg-wa hover:text-white"
-                        >
-                          <WhatsAppIcon className="h-4 w-4" />
-                          Tanya soal {cat.title}
-                        </a>
-                      </div>
+                            <WhatsAppIcon className="h-4 w-4" />
+                            Tanya soal {cat.title}
+                          </a>
+                        </div>
+                      </m.div>
                     </m.div>
                   )}
                 </AnimatePresence>
