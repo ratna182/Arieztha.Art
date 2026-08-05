@@ -9,8 +9,8 @@ export default function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#top" className="flex items-center gap-2.5">
           <Image
-            src="/logo-ariezta.webp"
-            alt="Logo Arieztha.Art Percetakan Yasin"
+            src="/logo-arieztha-art.webp"
+            alt="Logo Arieztha.Art Percetakan Yasin Bekasi"
             width={36}
             height={36}
             className="h-9 w-9 object-contain"

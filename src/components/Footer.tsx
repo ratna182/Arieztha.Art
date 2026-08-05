@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
           <div className="flex items-center gap-3">
             <Image
-              src="/logo-ariezta.webp"
-              alt="Logo Arieztha.Art"
+              src="/logo-arieztha-art.webp"
+              alt="Logo Arieztha.Art Percetakan Yasin Bekasi"
               width={40}
               height={40}
               className="h-10 w-10 rounded-full bg-white object-contain"
@@ -31,7 +31,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-sky-300">
-          {BUSINESS.address}
+          <p className="font-semibold text-sky-100">{BUSINESS.fullName}</p>
+          <p className="mt-1">{BUSINESS.address}</p>
+          <p className="mt-1">WhatsApp: {BUSINESS.whatsappDisplay}</p>
         </div>
       </div>
     </footer>

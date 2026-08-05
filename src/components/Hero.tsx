@@ -51,8 +51,8 @@ export default function Hero() {
           className="absolute inset-x-0 -inset-y-10"
         >
           <Image
-            src="/cover-aris.webp"
-            alt="Hasil cetak Arieztha.Art Percetakan Yasin Bekasi"
+            src="/hasil-cetak-percetakan-bekasi.webp"
+            alt="Percetakan Buku Yasin custom di Bekasi — hasil cetak dan sablon Arieztha.Art Percetakan Yasin"
             fill
             priority
             sizes="100vw"

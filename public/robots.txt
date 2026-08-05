@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arieztha-art.example.com/sitemap.xml

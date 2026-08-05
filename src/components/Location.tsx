@@ -1,12 +1,9 @@
 "use client";
 
-import { BUSINESS } from "@/lib/data";
+import { BUSINESS, GOOGLE_PLACE_ID } from "@/lib/data";
 import WaButton from "@/components/WaButton";
 
-const MAP_EMBED_SRC =
-  "https://www.google.com/maps?q=" +
-  encodeURIComponent("Arieztha.Art Percetakan Yasin, Jl. Raya Hankam No.72, Jatirahayu, Pondok Melati, Kota Bekasi") +
-  "&output=embed";
+const MAP_EMBED_SRC = `https://www.google.com/maps?q=place_id:${GOOGLE_PLACE_ID}&output=embed`;
 
 export default function Location() {
   return (
@@ -15,8 +12,12 @@ export default function Location() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
-              Kunjungi Kami
+              Percetakan Bekasi di Pondok Melati
             </h2>
+            <p className="mt-stack-sm max-w-xl text-neutral-600 dark:text-neutral-300">
+              Kunjungi toko kami di Jatirahayu — mudah dijangkau dari seluruh
+              area Bekasi dan sekitarnya.
+            </p>
             <div className="mt-8 space-y-5 text-neutral-700 dark:text-neutral-300">
               <div className="flex gap-3">
                 <span className="mt-0.5 font-medium text-sky-600 dark:text-sky-300">Alamat</span>

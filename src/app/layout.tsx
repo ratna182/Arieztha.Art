@@ -2,6 +2,9 @@ import { Lora, Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import MotionProvider from "@/components/MotionProvider";
+import { metadata } from "@/lib/seo";
+
+export { metadata };
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",

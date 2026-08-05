@@ -10,6 +10,16 @@ export const BUSINESS = {
   reviewCount: 215,
 };
 
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://arieztha-art.example.com";
+
+export const GEO = {
+  latitude: -6.296209,
+  longitude: 106.921045,
+};
+
+export const GOOGLE_PLACE_ID = "ChIJhdZDm8OTaS4Rdti5NnP6Ayc";
+
 export function waLink(message: string): string {
   return `https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
@@ -28,28 +38,28 @@ export const HIGHLIGHTS: Highlight[] = [
   {
     id: "yasin",
     title: "Buku Yasin",
-    description: "Soft cover & hard cover custom",
+    description: "Cetak buku yasin custom di Bekasi — soft cover & hard cover",
     message: "Halo, saya mau tanya soal cetak Buku Yasin",
     icon: "book",
   },
   {
     id: "nota",
     title: "Nota",
-    description: "Nota, bon, kwitansi, faktur, surat jalan",
+    description: "Cetak nota, bon, kwitansi, dan faktur untuk usaha",
     message: "Halo, saya mau tanya soal cetak Nota",
     icon: "receipt",
   },
   {
     id: "stempel",
     title: "Stempel",
-    description: "Stempel karet, plat stenlis, plang nama",
+    description: "Bikin stempel cepat — karet, plat stenlis, plang nama",
     message: "Halo, saya mau tanya soal Stempel & Plat",
     icon: "stamp",
   },
   {
     id: "mug",
     title: "Mug Custom",
-    description: "Sablon & digital print mug sesuai desain",
+    description: "Mug custom Bekasi — sablon & digital print sesuai desain",
     message: "Halo, saya mau tanya soal Mug Custom",
     icon: "mug",
   },
@@ -88,7 +98,7 @@ export const CATALOG: CatalogCategory[] = [
   {
     id: "identitas-aksesoris",
     title: "Identitas & Aksesoris",
-    items: ["Kartu Nama", "ID Card", "Lanyard", "Name Tag/Nama Dada", "Amplop"],
+    items: ["Kartu Nama", "ID Card Custom", "Lanyard", "Name Tag/Nama Dada", "Amplop"],
     message: "Halo, saya mau tanya soal Identitas & Aksesoris",
     icon: "card",
   },
@@ -102,21 +112,21 @@ export const CATALOG: CatalogCategory[] = [
   {
     id: "promosi-signage",
     title: "Promosi & Signage",
-    items: ["X Banner", "Roll Up Banner", "Spanduk", "Bendera", "Umbul-umbul", "Neon Box", "Plakat"],
+    items: ["X Banner", "Roll Up Banner", "Cetak Spanduk", "Bendera", "Umbul-umbul", "Neon Box", "Plakat"],
     message: "Halo, saya mau tanya soal Promosi & Signage",
     icon: "signage",
   },
   {
     id: "cetak-acara",
     title: "Cetak Acara & Undangan",
-    items: ["Undangan", "Brosur", "Tiket/Voucher", "Digital Print"],
+    items: ["Cetak Undangan", "Brosur", "Tiket/Voucher", "Digital Print"],
     message: "Halo, saya mau tanya soal Cetak Acara & Undangan",
     icon: "calendar",
   },
   {
     id: "stiker",
     title: "Stiker",
-    items: ["Stiker Cutting"],
+    items: ["Stiker Cutting Custom"],
     message: "Halo, saya mau tanya soal Stiker",
     icon: "sticker",
   },
