@@ -10,6 +10,7 @@ import {
   useTransform,
 } from "motion/react";
 import { DURATION, EASE } from "@/lib/motion";
+import { useLowEnd } from "@/lib/useCapability";
 
 export default function CountUp({
   to,
@@ -19,6 +20,7 @@ export default function CountUp({
   decimals?: number;
 }) {
   const reduceMotion = useReducedMotion();
+  const lowEnd = useLowEnd();
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
   const count = useMotionValue(0);
@@ -26,13 +28,13 @@ export default function CountUp({
 
   useEffect(() => {
     if (!inView) return;
-    if (reduceMotion) {
+    if (reduceMotion || lowEnd) {
       count.set(to);
       return;
     }
     const controls = animate(count, to, { duration: DURATION.reveal, ease: EASE });
     return () => controls.stop();
-  }, [inView, reduceMotion, count, to]);
+  }, [inView, reduceMotion, lowEnd, count, to]);
 
   return <m.span ref={ref}>{text}</m.span>;
 }

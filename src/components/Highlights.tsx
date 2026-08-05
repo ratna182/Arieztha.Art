@@ -34,8 +34,12 @@ export default function Highlights() {
               href={waLink(item.message)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col rounded-2xl bg-sky-50/50 p-card shadow-sm shadow-sky-100 transition-shadow duration-300 ease-premium hover:shadow-lg hover:shadow-sky-100 sm:p-card-lg dark:border dark:border-white/10 dark:bg-night-900 dark:shadow-black/20 dark:hover:shadow-black/40"
+              className="group relative flex flex-col rounded-2xl bg-sky-50/50 p-card shadow-sm shadow-sky-100 sm:p-card-lg dark:border dark:border-white/10 dark:bg-night-900 dark:shadow-black/20 will-change-transform"
             >
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 shadow-lg shadow-sky-100 transition-opacity duration-300 ease-premium group-hover:opacity-100 dark:shadow-black/40"
+              />
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-600 transition-transform duration-200 ease-premium group-hover:-translate-y-0.5 group-hover:rotate-2 dark:bg-white/10 dark:text-sky-300">
                 <Icon name={item.icon} className="h-7 w-7" weight="duotone" />
               </span>

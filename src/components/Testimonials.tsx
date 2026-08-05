@@ -54,8 +54,12 @@ export default function Testimonials() {
               variants={reduceMotion ? undefined : revealItemLight}
               whileHover={reduceMotion ? undefined : { y: -2 }}
               transition={{ duration: DURATION.fast, ease: EASE }}
-              className="flex flex-col rounded-2xl border border-sky-100 bg-white p-card shadow-sm transition-shadow duration-300 ease-premium hover:shadow-lg hover:shadow-sky-100 sm:p-card-lg dark:border-white/10 dark:bg-night-950 dark:shadow-black/20 dark:hover:shadow-black/40"
+              className="group relative flex flex-col rounded-2xl border border-sky-100 bg-white p-card shadow-sm sm:p-card-lg dark:border-white/10 dark:bg-night-950 dark:shadow-black/20 will-change-transform"
             >
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 shadow-lg shadow-sky-100 transition-opacity duration-300 ease-premium group-hover:opacity-100 dark:shadow-black/40"
+              />
               <div className="flex items-center gap-0.5" aria-hidden="true">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <Star key={n} />

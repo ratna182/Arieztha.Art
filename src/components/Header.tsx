@@ -41,7 +41,7 @@ export default function Header() {
       <m.div
         aria-hidden="true"
         style={reduceMotion ? undefined : { scaleX: progress }}
-        className="absolute inset-x-0 top-0 h-0.5 origin-left bg-sky-500 dark:bg-sky-400"
+        className="absolute inset-x-0 top-0 h-0.5 origin-left bg-sky-500 will-change-transform dark:bg-sky-400"
       />
 
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">

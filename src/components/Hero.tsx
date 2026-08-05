@@ -5,6 +5,7 @@ import Image from "next/image";
 import { m, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { BUSINESS } from "@/lib/data";
 import { DURATION, EASE, HERO_DELAYS } from "@/lib/motion";
+import { useLowEnd } from "@/lib/useCapability";
 import WaButton from "@/components/WaButton";
 
 function MaskedLine({
@@ -32,6 +33,7 @@ function MaskedLine({
 
 export default function Hero() {
   const reduceMotion = useReducedMotion();
+  const lowEnd = useLowEnd();
   const bannerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -40,6 +42,8 @@ export default function Hero() {
   });
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, 40]);
 
+  const useLightMotion = reduceMotion || lowEnd;
+
   return (
     <section id="top" className="relative">
       <div
@@ -47,11 +51,11 @@ export default function Hero() {
         className="relative min-h-[560px] w-full overflow-hidden bg-sky-900 sm:min-h-[620px] lg:min-h-[640px]"
       >
         <m.div
-          style={reduceMotion ? undefined : { y: parallaxY }}
-          initial={reduceMotion ? false : { scale: 1.06 }}
-          animate={reduceMotion ? undefined : { scale: 1 }}
+          style={useLightMotion ? undefined : { y: parallaxY }}
+          initial={useLightMotion ? false : { scale: 1.06 }}
+          animate={useLightMotion ? undefined : { scale: 1 }}
           transition={
-            reduceMotion
+            useLightMotion
               ? undefined
               : { duration: DURATION.heroLine, ease: EASE }
           }
