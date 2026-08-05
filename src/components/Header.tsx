@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BUSINESS } from "@/lib/data";
+import { BUSINESS, NAV_LINKS } from "@/lib/data";
 import WaButton from "@/components/WaButton";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -19,6 +19,18 @@ export default function Header() {
             Arieztha.Art
           </span>
         </a>
+
+        <nav aria-label="Navigasi utama" className="hidden items-center gap-7 md:flex">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-neutral-600 transition-colors hover:text-sky-600 dark:text-neutral-300 dark:hover:text-sky-300"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle />

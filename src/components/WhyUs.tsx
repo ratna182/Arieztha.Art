@@ -29,7 +29,7 @@ const REASONS = [
 
 export default function WhyUs() {
   return (
-    <section className="bg-white py-section sm:py-section-lg dark:bg-night-950">
+    <section id="keunggulan" className="bg-white py-section sm:py-section-lg dark:bg-night-950">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>

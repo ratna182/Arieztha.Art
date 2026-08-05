@@ -12,7 +12,7 @@ export default function Catalog() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-sky-50 py-section sm:py-section-lg dark:bg-night-900">
+    <section id="catalog" className="bg-sky-50 py-section sm:py-section-lg dark:bg-night-900">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
           Cetak Apa Saja, Kapan Saja, Langsung dari Handphone Anda

@@ -7,7 +7,7 @@ const MAP_EMBED_SRC = `https://www.google.com/maps?q=place_id:${GOOGLE_PLACE_ID}
 
 export default function Location() {
   return (
-    <section className="bg-white py-section sm:py-section-lg dark:bg-night-950">
+    <section id="lokasi" className="bg-white py-section sm:py-section-lg dark:bg-night-950">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>

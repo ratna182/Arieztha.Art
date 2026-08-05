@@ -26,6 +26,18 @@ export function waLink(message: string): string {
 
 export const WA_DEFAULT_MESSAGE = "Halo, saya mau tanya soal percetakan Arieztha.Art";
 
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+export const NAV_LINKS: NavLink[] = [
+  { label: "Layanan", href: "#catalog" },
+  { label: "Keunggulan", href: "#keunggulan" },
+  { label: "Testimoni", href: "#testimoni" },
+  { label: "Lokasi", href: "#lokasi" },
+];
+
 export interface Highlight {
   id: string;
   title: string;

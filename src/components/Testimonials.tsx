@@ -2,7 +2,7 @@ import { BUSINESS, TESTIMONIALS } from "@/lib/data";
 
 export default function Testimonials() {
   return (
-    <section className="bg-sky-50 py-section sm:py-section-lg dark:bg-night-900">
+    <section id="testimoni" className="bg-sky-50 py-section sm:py-section-lg dark:bg-night-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-4">
           <div>
