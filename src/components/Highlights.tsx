@@ -34,10 +34,10 @@ export default function Highlights() {
               href={waLink(item.message)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col rounded-2xl bg-gradient-to-br from-sky-50 to-white p-card shadow-sm shadow-sky-100 transition-shadow duration-300 ease-premium hover:shadow-lg hover:shadow-sky-100 sm:p-card-lg dark:from-night-900 dark:to-night-950 dark:border dark:border-white/10 dark:shadow-black/20 dark:hover:shadow-black/40"
+              className="group flex flex-col rounded-2xl bg-sky-50/50 p-card shadow-sm shadow-sky-100 transition-shadow duration-300 ease-premium hover:shadow-lg hover:shadow-sky-100 sm:p-card-lg dark:border dark:border-white/10 dark:bg-night-900 dark:shadow-black/20 dark:hover:shadow-black/40"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-white/10 dark:text-sky-300">
-                <Icon name={item.icon} className="h-6 w-6" weight="duotone" />
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-600 dark:bg-white/10 dark:text-sky-300">
+                <Icon name={item.icon} className="h-7 w-7" weight="duotone" />
               </span>
               <h3 className="mt-4 font-display text-subheading font-semibold text-sky-800 dark:text-sky-100">
                 {item.title}

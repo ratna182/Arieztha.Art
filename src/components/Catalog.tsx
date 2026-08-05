@@ -74,7 +74,7 @@ export default function Catalog() {
                       {cat.items.map((item) => (
                         <span
                           key={item}
-                          className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3.5 py-2 text-sm text-sky-800 dark:border-white/10 dark:bg-white/10 dark:text-sky-100"
+                          className="inline-flex items-center rounded-full bg-sky-50 px-3.5 py-2 text-sm text-sky-800 dark:bg-white/10 dark:text-sky-100"
                         >
                           {item}
                         </span>
@@ -85,7 +85,7 @@ export default function Catalog() {
                         href={waLink(cat.message)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-wa/40 bg-wa/5 px-4 py-2 text-sm font-medium text-wa-700 transition-colors hover:bg-wa hover:text-white"
+                        className="inline-flex items-center gap-2 rounded-full border border-wa/40 bg-wa/5 px-4 py-2 text-sm font-medium text-wa-800 transition-colors hover:bg-wa hover:text-white"
                       >
                         <WhatsAppIcon className="h-4 w-4" />
                         Tanya soal {cat.title}
