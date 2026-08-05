@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { m, useReducedMotion } from "motion/react";
-import { BUSINESS, NAV_LINKS } from "@/lib/data";
+import { BUSINESS, MAPS_URL, NAV_LINKS } from "@/lib/data";
 import { revealContainerFast, revealItemLight } from "@/lib/motion";
 import WaButton from "@/components/WaButton";
 
@@ -67,7 +67,29 @@ export default function Footer() {
               Kontak
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm text-sky-100">
-              <li>{BUSINESS.address}</li>
+              <li>
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-start gap-1.5 text-sky-100 underline underline-offset-2 decoration-sky-300 transition-colors hover:text-white"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-sky-300"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  {BUSINESS.address}
+                </a>
+              </li>
               <li>{BUSINESS.hours}</li>
               <li>WhatsApp: {BUSINESS.whatsappDisplay}</li>
             </ul>

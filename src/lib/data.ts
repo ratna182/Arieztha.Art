@@ -20,6 +20,9 @@ export const GEO = {
 
 export const GOOGLE_PLACE_FTID = "0x2e6993c39b43d685:0x2703fa7336b9d876";
 
+export const MAPS_URL =
+  "https://maps.google.com/?cid=2811365965155653750";
+
 export function waLink(message: string): string {
   return `https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
