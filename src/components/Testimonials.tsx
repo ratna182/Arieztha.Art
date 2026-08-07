@@ -1,8 +1,9 @@
 "use client";
 
-import { m, useReducedMotion } from "motion/react";
+import { m } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { BUSINESS, TESTIMONIALS } from "@/lib/data";
-import { DURATION, EASE, revealContainerSlow, revealItemLight } from "@/lib/motion";
+import { DURATION, EASE, revealContainerSlow, revealContainerSlowInstant, revealItemLight, revealItemLightInstant } from "@/lib/motion";
 import CountUp from "@/components/CountUp";
 
 export default function Testimonials() {
@@ -12,10 +13,10 @@ export default function Testimonials() {
     <section id="testimoni" className="bg-sky-50 py-section sm:py-section-lg dark:bg-night-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <m.div
-          initial={reduceMotion ? false : "hidden"}
-          whileInView={reduceMotion ? undefined : "show"}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          variants={reduceMotion ? undefined : revealItemLight}
+          variants={reduceMotion ? revealItemLightInstant : revealItemLight}
           className="flex items-end justify-between gap-4"
         >
           <div>
@@ -42,16 +43,16 @@ export default function Testimonials() {
         </m.div>
 
         <m.div
-          variants={reduceMotion ? undefined : revealContainerSlow}
-          initial={reduceMotion ? false : "hidden"}
-          whileInView={reduceMotion ? undefined : "show"}
+          variants={reduceMotion ? revealContainerSlowInstant : revealContainerSlow}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
           className="mt-stack grid gap-grid sm:gap-grid-lg md:grid-cols-3"
         >
           {TESTIMONIALS.map((t) => (
             <m.figure
               key={t.name}
-              variants={reduceMotion ? undefined : revealItemLight}
+              variants={reduceMotion ? revealItemLightInstant : revealItemLight}
               whileHover={reduceMotion ? undefined : { y: -2 }}
               transition={{ duration: DURATION.fast, ease: EASE }}
               className="group relative flex flex-col rounded-2xl border border-sky-100 bg-white p-card shadow-sm sm:p-card-lg dark:border-white/10 dark:bg-night-950 dark:shadow-black/20 will-change-transform"

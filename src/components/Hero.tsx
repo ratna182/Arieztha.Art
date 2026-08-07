@@ -2,7 +2,8 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { m, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { m, useScroll, useTransform } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { BUSINESS } from "@/lib/data";
 import { DURATION, EASE, HERO_DELAYS } from "@/lib/motion";
 import { useLowEnd } from "@/lib/useCapability";
@@ -20,9 +21,13 @@ function MaskedLine({
   return (
     <span className="block overflow-hidden pb-[0.08em]">
       <m.span
-        initial={reduceMotion ? false : { y: "110%" }}
-        animate={reduceMotion ? undefined : { y: 0 }}
-        transition={{ delay, duration: DURATION.heroLine, ease: EASE }}
+        initial={{ y: "110%" }}
+        animate={{ y: 0 }}
+        transition={
+          reduceMotion
+            ? { duration: 0 }
+            : { delay, duration: DURATION.heroLine, ease: EASE }
+        }
         className="block will-change-transform"
       >
         {children}
@@ -51,12 +56,12 @@ export default function Hero() {
         className="relative min-h-[560px] w-full overflow-hidden bg-sky-900 sm:min-h-[620px] lg:min-h-[640px]"
       >
         <m.div
-          style={useLightMotion ? undefined : { y: parallaxY }}
-          initial={useLightMotion ? false : { scale: 1.06 }}
-          animate={useLightMotion ? undefined : { scale: 1 }}
+          style={{ y: useLightMotion ? 0 : parallaxY }}
+          initial={{ scale: 1.06 }}
+          animate={{ scale: 1 }}
           transition={
             useLightMotion
-              ? undefined
+              ? { duration: 0 }
               : { duration: DURATION.heroLine, ease: EASE }
           }
           className="absolute inset-x-0 -inset-y-10"
@@ -86,18 +91,26 @@ export default function Hero() {
             </h1>
 
             <m.p
-              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-              transition={{ delay: HERO_DELAYS.sub, duration: 0.55, ease: EASE }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: reduceMotion ? 0 : HERO_DELAYS.sub,
+                duration: reduceMotion ? 0 : 0.55,
+                ease: EASE,
+              }}
               className="mt-4 max-w-xl text-lead text-sky-50 sm:mt-5"
             >
-              Solusi Cetak Cepat, Mudah, dan Berkualitas untuk Bisnis Anda.
+              Solusi Cetak Cepat, Murah, dan Berkualitas untuk Bisnis Anda.
             </m.p>
 
             <m.p
-              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-              animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-              transition={{ delay: HERO_DELAYS.meta, duration: 0.55, ease: EASE }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: reduceMotion ? 0 : HERO_DELAYS.meta,
+                duration: reduceMotion ? 0 : 0.55,
+                ease: EASE,
+              }}
               className="mt-3 flex flex-wrap items-center gap-2 text-sm text-sky-100/90"
             >
               <span className="font-semibold text-white">
@@ -108,9 +121,13 @@ export default function Hero() {
             </m.p>
 
             <m.div
-              initial={reduceMotion ? false : { opacity: 0, y: 12, scale: 0.95 }}
-              animate={reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: HERO_DELAYS.cta, duration: 0.55, ease: EASE }}
+              initial={{ opacity: 0, y: 12, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                delay: reduceMotion ? 0 : HERO_DELAYS.cta,
+                duration: reduceMotion ? 0 : 0.55,
+                ease: EASE,
+              }}
               className="mt-6 sm:mt-8"
             >
               <WaButton className="px-6 py-3.5 text-base">

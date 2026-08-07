@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { m, useReducedMotion } from "motion/react";
+import { m } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { CATALOG, waLink } from "@/lib/data";
-import { EASE, revealContainerFast, revealItemRow } from "@/lib/motion";
+import { EASE, revealContainerFast, revealContainerFastInstant, revealItemRow, revealItemRowInstant } from "@/lib/motion";
 import Icon from "@/components/Icon";
 import { WhatsAppIcon } from "@/components/Icon";
 
@@ -23,9 +24,9 @@ export default function Catalog() {
         </p>
 
         <m.div
-          variants={reduceMotion ? undefined : revealContainerFast}
-          initial={reduceMotion ? false : "hidden"}
-          whileInView={reduceMotion ? undefined : "show"}
+          variants={reduceMotion ? revealContainerFastInstant : revealContainerFast}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, amount: 0.1 }}
           className="mt-stack grid gap-3"
         >
@@ -34,7 +35,7 @@ export default function Catalog() {
             return (
               <m.div
                 key={cat.id}
-                variants={reduceMotion ? undefined : revealItemRow}
+                variants={reduceMotion ? revealItemRowInstant : revealItemRow}
                 className="overflow-hidden rounded-2xl border border-sky-100 bg-white dark:border-white/10 dark:bg-night-950"
               >
                 <h3 className="font-display text-base font-semibold text-sky-800 sm:text-lg dark:text-sky-100">

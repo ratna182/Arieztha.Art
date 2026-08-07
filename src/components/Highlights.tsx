@@ -1,8 +1,9 @@
 "use client";
 
-import { m, useReducedMotion } from "motion/react";
+import { m } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { HIGHLIGHTS, waLink } from "@/lib/data";
-import { DURATION, EASE, revealContainer, revealItem } from "@/lib/motion";
+import { DURATION, EASE, revealContainer, revealContainerInstant, revealItem, revealItemInstant } from "@/lib/motion";
 import Icon from "@/components/Icon";
 
 export default function Highlights() {
@@ -19,16 +20,16 @@ export default function Highlights() {
         </p>
 
         <m.div
-          variants={revealContainer}
-          initial={reduceMotion ? false : "hidden"}
-          whileInView={reduceMotion ? undefined : "show"}
+          variants={reduceMotion ? revealContainerInstant : revealContainer}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
           className="mt-stack grid grid-cols-2 gap-grid sm:gap-grid-lg lg:grid-cols-4"
         >
           {HIGHLIGHTS.map((item) => (
             <m.a
               key={item.id}
-              variants={revealItem}
+              variants={reduceMotion ? revealItemInstant : revealItem}
               whileHover={reduceMotion ? undefined : { y: -2 }}
               transition={{ duration: DURATION.fast, ease: EASE }}
               href={waLink(item.message)}

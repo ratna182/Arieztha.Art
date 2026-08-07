@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { m, useReducedMotion } from "motion/react";
+import { m } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { BUSINESS, MAPS_URL, NAV_LINKS } from "@/lib/data";
-import { revealContainerFast, revealItemLight } from "@/lib/motion";
+import { revealContainerFast, revealContainerFastInstant, revealItemLight, revealItemLightInstant } from "@/lib/motion";
 import WaButton from "@/components/WaButton";
 
 export default function Footer() {
@@ -13,13 +14,13 @@ export default function Footer() {
     <footer className="bg-sky-900 text-sky-100">
       <div className="mx-auto max-w-6xl px-4 py-section sm:px-6">
         <m.div
-          variants={reduceMotion ? undefined : revealContainerFast}
-          initial={reduceMotion ? false : "hidden"}
-          whileInView={reduceMotion ? undefined : "show"}
+          variants={reduceMotion ? revealContainerFastInstant : revealContainerFast}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
           className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4"
         >
-          <m.div variants={reduceMotion ? undefined : revealItemLight} className="lg:col-span-2">
+          <m.div variants={reduceMotion ? revealItemLightInstant : revealItemLight} className="lg:col-span-2">
             <div className="flex items-center gap-3">
               <Image
                 src="/logo-arieztha-art.webp"
@@ -44,7 +45,7 @@ export default function Footer() {
             </p>
           </m.div>
 
-          <m.div variants={reduceMotion ? undefined : revealItemLight}>
+          <m.div variants={reduceMotion ? revealItemLightInstant : revealItemLight}>
             <h2 className="text-sm font-semibold uppercase tracking-wider text-sky-300">
               Navigasi
             </h2>
@@ -62,7 +63,7 @@ export default function Footer() {
             </ul>
           </m.div>
 
-          <m.div variants={reduceMotion ? undefined : revealItemLight}>
+          <m.div variants={reduceMotion ? revealItemLightInstant : revealItemLight}>
             <h2 className="text-sm font-semibold uppercase tracking-wider text-sky-300">
               Kontak
             </h2>

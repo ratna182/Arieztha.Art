@@ -1,8 +1,9 @@
 "use client";
 
-import { m, useReducedMotion } from "motion/react";
+import { m } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { BUSINESS, GEO } from "@/lib/data";
-import { DURATION, EASE, revealItemX } from "@/lib/motion";
+import { DURATION, EASE, revealItemX, revealItemXInstant } from "@/lib/motion";
 import WaButton from "@/components/WaButton";
 
 const MAP_EMBED_SRC = `https://maps.google.com/maps?q=${GEO.latitude},${GEO.longitude}(${encodeURIComponent(
@@ -17,10 +18,10 @@ export default function Location() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <m.div
-            initial={reduceMotion ? false : "hidden"}
-            whileInView={reduceMotion ? undefined : "show"}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            variants={reduceMotion ? undefined : revealItemX}
+            variants={reduceMotion ? revealItemXInstant : revealItemX}
           >
             <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
               Percetakan Express di Bekasi
@@ -52,10 +53,14 @@ export default function Location() {
           </m.div>
 
           <m.div
-            initial={reduceMotion ? false : { opacity: 0 }}
-            whileInView={reduceMotion ? undefined : { opacity: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: DURATION.reveal, ease: EASE }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { duration: DURATION.reveal, ease: EASE }
+            }
             className="overflow-hidden rounded-2xl border border-sky-100 shadow-md dark:border-white/10"
           >
             <iframe

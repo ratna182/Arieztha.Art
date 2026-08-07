@@ -1,14 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import {
-  animate,
-  m,
-  useInView,
-  useMotionValue,
-  useReducedMotion,
-  useTransform,
-} from "motion/react";
+import { animate, m, useInView, useMotionValue, useTransform } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { DURATION, EASE } from "@/lib/motion";
 import { useLowEnd } from "@/lib/useCapability";
 

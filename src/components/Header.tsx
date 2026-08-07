@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { m, useReducedMotion, useScroll, useSpring } from "motion/react";
+import { m, useScroll, useSpring } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { BUSINESS, NAV_LINKS } from "@/lib/data";
 import { DURATION, EASE } from "@/lib/motion";
 import WaButton from "@/components/WaButton";
@@ -29,9 +30,13 @@ export default function Header() {
 
   return (
     <m.header
-      initial={reduceMotion ? false : { y: -24, opacity: 0 }}
-      animate={reduceMotion ? undefined : { y: 0, opacity: 1 }}
-      transition={{ duration: DURATION.medium, ease: EASE }}
+      initial={{ y: -24, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={
+        reduceMotion
+          ? { duration: 0 }
+          : { duration: DURATION.medium, ease: EASE }
+      }
       className={`sticky top-0 z-50 transition-colors duration-300 ease-premium ${
         overHero
           ? "border-b border-transparent bg-transparent"
@@ -40,7 +45,7 @@ export default function Header() {
     >
       <m.div
         aria-hidden="true"
-        style={reduceMotion ? undefined : { scaleX: progress }}
+        style={reduceMotion ? { scaleX: 0 } : { scaleX: progress }}
         className="absolute inset-x-0 top-0 h-0.5 origin-left bg-sky-500 will-change-transform dark:bg-sky-400"
       />
 

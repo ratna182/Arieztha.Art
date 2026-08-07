@@ -1,6 +1,7 @@
 "use client";
 
-import { m, useReducedMotion } from "motion/react";
+import { m } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { waLink, WA_DEFAULT_MESSAGE } from "@/lib/data";
 import { DURATION, EASE } from "@/lib/motion";
 import { WhatsAppIcon } from "@/components/Icon";

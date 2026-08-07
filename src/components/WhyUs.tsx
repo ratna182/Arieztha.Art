@@ -1,8 +1,9 @@
 "use client";
 
 import { BUSINESS } from "@/lib/data";
-import { m, useReducedMotion } from "motion/react";
-import { revealContainer, revealItemUp, revealItemX } from "@/lib/motion";
+import { m } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
+import { revealContainer, revealContainerInstant, revealItemUp, revealItemUpInstant, revealItemX, revealItemXInstant } from "@/lib/motion";
 import CountUp from "@/components/CountUp";
 import Icon from "@/components/Icon";
 import WaButton from "@/components/WaButton";
@@ -43,10 +44,10 @@ export default function WhyUs() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <m.div
-            initial={reduceMotion ? false : "hidden"}
-            whileInView={reduceMotion ? undefined : "show"}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            variants={reduceMotion ? undefined : revealItemX}
+            variants={reduceMotion ? revealItemXInstant : revealItemX}
           >
             <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
               Kenapa Pilih Kami
@@ -72,16 +73,16 @@ export default function WhyUs() {
           </m.div>
 
           <m.div
-            variants={reduceMotion ? undefined : revealContainer}
-            initial={reduceMotion ? false : "hidden"}
-            whileInView={reduceMotion ? undefined : "show"}
+            variants={reduceMotion ? revealContainerInstant : revealContainer}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
             className="grid grid-cols-2 gap-grid sm:gap-grid-lg"
           >
             {REASONS.map((r) => (
               <m.div
                 key={r.label}
-                variants={reduceMotion ? undefined : revealItemUp}
+                variants={reduceMotion ? revealItemUpInstant : revealItemUp}
                 className="rounded-2xl border border-sky-100 bg-sky-50/50 p-card dark:border-white/10 dark:bg-white/5"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-white/10 dark:text-sky-300">

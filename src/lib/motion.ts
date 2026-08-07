@@ -61,3 +61,31 @@ export const revealItemZoom: Variants = {
   hidden: { opacity: 0, scale: 0.92 },
   show: { opacity: 1, scale: 1, transition: { duration: DURATION.reveal, ease: EASE } },
 };
+
+function instant(variants: Variants): Variants {
+  const out: Variants = {};
+  for (const [key, value] of Object.entries(variants)) {
+    if (value && typeof value === "object" && "transition" in value) {
+      const { transition, ...target } = value;
+      out[key] = {
+        ...target,
+        transition: transition
+          ? { ...transition, duration: 0, staggerChildren: 0 }
+          : { duration: 0, staggerChildren: 0 },
+      };
+    } else {
+      out[key] = value;
+    }
+  }
+  return out;
+}
+
+export const revealContainerInstant = instant(revealContainer);
+export const revealContainerFastInstant = instant(revealContainerFast);
+export const revealContainerSlowInstant = instant(revealContainerSlow);
+export const revealItemInstant = instant(revealItem);
+export const revealItemLightInstant = instant(revealItemLight);
+export const revealItemUpInstant = instant(revealItemUp);
+export const revealItemRowInstant = instant(revealItemRow);
+export const revealItemXInstant = instant(revealItemX);
+export const revealItemZoomInstant = instant(revealItemZoom);
