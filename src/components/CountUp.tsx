@@ -17,7 +17,8 @@ export default function CountUp({
   const lowEnd = useLowEnd();
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
-  const count = useMotionValue(0);
+  // Keep the correct SSR value visible if the observer never fires.
+  const count = useMotionValue(to);
   const text = useTransform(count, (v) => v.toFixed(decimals));
 
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function CountUp({
       count.set(to);
       return;
     }
+    count.set(0);
     const controls = animate(count, to, { duration: DURATION.reveal, ease: EASE });
     return () => controls.stop();
   }, [inView, reduceMotion, lowEnd, count, to]);

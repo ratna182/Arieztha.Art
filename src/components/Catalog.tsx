@@ -42,6 +42,7 @@ export default function Catalog() {
                   <button
                     onClick={() => setOpen(isOpen ? null : cat.id)}
                     aria-expanded={isOpen}
+                    aria-controls={`${cat.id}-panel`}
                     className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors duration-150 ease-premium hover:bg-sky-100/60 sm:px-6 dark:hover:bg-white/5"
                   >
                     <span className="flex items-center gap-3">
@@ -60,6 +61,8 @@ export default function Catalog() {
                 </h3>
 
                 <div
+                  id={`${cat.id}-panel`}
+                  aria-hidden={!isOpen}
                   className={`grid ${
                     reduceMotion
                       ? ""
