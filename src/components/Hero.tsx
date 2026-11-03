@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { m, useScroll, useTransform } from "motion/react";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 import { BUSINESS } from "@/lib/data";
@@ -50,10 +51,10 @@ export default function Hero() {
   const useLightMotion = reduceMotion || lowEnd;
 
   return (
-    <section id="top" className="relative">
+    <section id="top" className="relative -mt-16">
       <div
         ref={bannerRef}
-        className="relative min-h-[560px] w-full overflow-hidden bg-sky-900 sm:min-h-[620px] lg:min-h-[640px]"
+        className="relative min-h-[600px] w-full overflow-hidden bg-sky-900 sm:min-h-[640px] lg:min-h-[660px]"
       >
         <m.div
           style={{ y: useLightMotion ? 0 : parallaxY }}
@@ -77,16 +78,16 @@ export default function Hero() {
         </m.div>
 
         <div className="hero-overlay absolute inset-0" />
-        <div className="hero-nav-fade pointer-events-none absolute inset-x-0 top-0 h-12 sm:h-14" />
+        <div className="hero-nav-fade pointer-events-none absolute inset-x-0 top-0 h-16" />
 
         <div className="absolute inset-x-0 bottom-0">
-          <div className="mx-auto w-full max-w-6xl px-4 pb-12 sm:px-6 sm:pb-16">
+          <div className="mx-auto w-full max-w-6xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16">
             <h1 className="font-display text-hero font-bold text-white drop-shadow-[0_2px_10px_rgba(2,4,32,0.55)]">
               <MaskedLine delay={HERO_DELAYS.line1}>
-                Percetakan Express
+                Cetak Yasin &amp; Nota
               </MaskedLine>
               <MaskedLine delay={HERO_DELAYS.line2}>
-                <span className="italic text-emerald-300">Sejak {BUSINESS.since}</span>
+                <span className="italic text-emerald-300">Express di Bekasi</span>
               </MaskedLine>
             </h1>
 
@@ -100,7 +101,8 @@ export default function Hero() {
               }}
               className="mt-4 max-w-xl text-lead text-sky-50 sm:mt-5"
             >
-              Solusi Cetak Cepat, Murah, dan Berkualitas untuk Bisnis Anda.
+              Percetakan custom sejak 2010 untuk buku Yasin, kwitansi, dan nota.
+              Konsultasi desain langsung via WhatsApp.
             </m.p>
 
             <m.p
@@ -114,10 +116,10 @@ export default function Hero() {
               className="mt-3 flex flex-wrap items-center gap-2 text-sm text-sky-100/90"
             >
               <span className="font-semibold text-white">
-                ★ {BUSINESS.rating} ({BUSINESS.reviewCount} review)
+                ★ {BUSINESS.rating.toFixed(1)} ({BUSINESS.reviewCount} ulasan Google)
               </span>
               <span aria-hidden="true">·</span>
-              <span>Buka 24 jam</span>
+              <span>Buka {BUSINESS.hoursShort}</span>
             </m.p>
 
             <m.div
@@ -128,11 +130,17 @@ export default function Hero() {
                 duration: reduceMotion ? 0 : 0.55,
                 ease: EASE,
               }}
-              className="mt-6 sm:mt-8"
+              className="mt-6 flex flex-wrap items-center gap-5 sm:mt-8"
             >
               <WaButton className="px-6 py-3.5 text-base">
                 Pesan via WhatsApp
               </WaButton>
+              <Link
+                href="/cetak-yasin"
+                className="text-sm font-semibold text-sky-100 underline underline-offset-4 transition-colors hover:text-white"
+              >
+                Lihat layanan Yasin
+              </Link>
             </m.div>
           </div>
         </div>

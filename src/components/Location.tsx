@@ -2,19 +2,19 @@
 
 import { m } from "motion/react";
 import { useReducedMotion } from "@/lib/useReducedMotion";
-import { BUSINESS, GEO } from "@/lib/data";
+import { BUSINESS, GOOGLE_REVIEW_URL, MAPS_PLACE_URL } from "@/lib/data";
 import { DURATION, EASE, revealItemX, revealItemXInstant } from "@/lib/motion";
 import WaButton from "@/components/WaButton";
-
-const MAP_EMBED_SRC = `https://maps.google.com/maps?q=${GEO.latitude},${GEO.longitude}(${encodeURIComponent(
-  BUSINESS.fullName
-)})&hl=id&z=17&output=embed&iwloc=near`;
+import MapEmbed from "@/components/MapEmbed";
 
 export default function Location() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="lokasi" className="bg-white py-section sm:py-section-lg dark:bg-night-950">
+    <section
+      id="lokasi"
+      className="bg-white py-section sm:py-section-lg dark:bg-night-950"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <m.div
@@ -24,31 +24,72 @@ export default function Location() {
             variants={reduceMotion ? revealItemXInstant : revealItemX}
           >
             <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
-              Percetakan Express di Bekasi
+              Percetakan di Jatirahayu, Bekasi
             </h2>
             <p className="mt-stack-sm max-w-xl text-neutral-600 dark:text-neutral-300">
-              Kunjungi toko kami di Jatirahayu — mudah dijangkau dari seluruh
-              area Bekasi dan sekitarnya.
+              Toko kami berada di Jl. Raya Hankam, {BUSINESS.landmark}. Mudah
+              dijangkau dari Pondok Melati, Pondok Gede, dan area Kota Bekasi
+              lainnya.
             </p>
             <div className="mt-8 space-y-5 text-neutral-700 dark:text-neutral-300">
               <div className="flex gap-3">
-                <span className="mt-0.5 font-medium text-sky-600 dark:text-sky-300">Alamat</span>
-                <span>{BUSINESS.address}</span>
+                <span className="mt-0.5 font-medium text-sky-600 dark:text-sky-300">
+                  Alamat
+                </span>
+                <span>{BUSINESS.addressLine}</span>
               </div>
               <div className="flex gap-3">
-                <span className="mt-0.5 font-medium text-sky-600 dark:text-sky-300">Jam buka</span>
+                <span className="mt-0.5 font-medium text-sky-600 dark:text-sky-300">
+                  Jam buka
+                </span>
                 <span>{BUSINESS.hours}</span>
               </div>
               <div className="flex gap-3">
-                <span className="mt-0.5 font-medium text-sky-600 dark:text-sky-300">WhatsApp</span>
-                <span>{BUSINESS.whatsappDisplay}</span>
+                <span className="mt-0.5 font-medium text-sky-600 dark:text-sky-300">
+                  Telepon
+                </span>
+                <a
+                  href={`tel:${BUSINESS.phone}`}
+                  className="underline underline-offset-2 hover:text-sky-600 dark:hover:text-sky-300"
+                >
+                  {BUSINESS.phoneDisplay}
+                </a>
+              </div>
+              <div className="flex gap-3">
+                <span className="mt-0.5 font-medium text-sky-600 dark:text-sky-300">
+                  WhatsApp
+                </span>
+                <a
+                  href={BUSINESS.whatsappProfileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-sky-600 dark:hover:text-sky-300"
+                >
+                  {BUSINESS.phoneDisplay}
+                </a>
               </div>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-10 flex flex-wrap items-center gap-5">
               <WaButton className="px-6 py-3.5 text-base">
                 Pesan via WhatsApp
               </WaButton>
+              <a
+                href={MAPS_PLACE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-sky-700 underline underline-offset-4 dark:text-sky-300"
+              >
+                Lihat di Google Maps
+              </a>
+              <a
+                href={GOOGLE_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-sky-700 underline underline-offset-4 dark:text-sky-300"
+              >
+                Beri ulasan
+              </a>
             </div>
           </m.div>
 
@@ -61,16 +102,8 @@ export default function Location() {
                 ? { duration: 0 }
                 : { duration: DURATION.reveal, ease: EASE }
             }
-            className="overflow-hidden rounded-2xl border border-sky-100 shadow-md dark:border-white/10"
           >
-            <iframe
-              src={MAP_EMBED_SRC}
-              title="Peta lokasi Arieztha.Art Percetakan Yasin"
-              loading="lazy"
-              className="h-72 w-full sm:h-96"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+            <MapEmbed />
           </m.div>
         </div>
       </div>

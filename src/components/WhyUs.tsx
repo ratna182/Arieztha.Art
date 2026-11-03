@@ -13,14 +13,14 @@ const REASONS = [
     label: "Rating",
     value: BUSINESS.rating,
     decimals: 1,
-    description: `${BUSINESS.reviewCount} review Google dari pelanggan nyata.`,
+    description: `${BUSINESS.reviewCount} ulasan Google dari pelanggan.`,
     icon: "star",
   },
   {
     label: "Buka",
-    value: 24,
+    value: 14,
     suffix: " Jam",
-    description: "Melayani kapan pun, termasuk kebutuhan cetak mendadak.",
+    description: "Setiap hari 07.00–21.00 WIB, termasuk kebutuhan mendadak.",
     icon: "clock",
   },
   {
@@ -50,15 +50,15 @@ export default function WhyUs() {
             variants={reduceMotion ? revealItemXInstant : revealItemX}
           >
             <h2 className="font-display text-heading text-sky-800 dark:text-sky-100">
-              Kenapa Pilih Kami
+              Kenapa Memilih Percetakan Kami di Bekasi
             </h2>
             <p className="mt-stack-sm max-w-xl text-neutral-600 dark:text-neutral-300">
               Percetakan full-service dengan pengalaman sejak 2010 — dipercaya
-              ratusan pelanggan di Bekasi.
+              pelanggan di Bekasi untuk buku Yasin, kwitansi, dan nota custom.
             </p>
             <p className="mt-4 flex flex-wrap items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
               <span className="font-semibold text-sky-600 dark:text-sky-300">
-                ★ {BUSINESS.rating.toFixed(1)} ({BUSINESS.reviewCount} review)
+                ★ {BUSINESS.rating.toFixed(1)} ({BUSINESS.reviewCount} ulasan)
               </span>
               <span aria-hidden="true">·</span>
               <span>Sejak {BUSINESS.since}</span>

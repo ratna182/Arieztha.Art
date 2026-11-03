@@ -18,6 +18,8 @@ import {
   Sun,
   Moon,
   CaretDown,
+  List,
+  X,
   WhatsappLogo,
   type Icon,
 } from "@phosphor-icons/react";
@@ -40,6 +42,8 @@ const ICONS: Record<string, Icon> = {
   sun: Sun,
   moon: Moon,
   chevronDown: CaretDown,
+  menu: List,
+  close: X,
   whatsapp: WhatsappLogo,
 };
 
